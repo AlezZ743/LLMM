@@ -1,6 +1,6 @@
 # **Markdown**
 
-## * * ¿Qué es Markdown? * *
+## _¿Qué es Markdown?_
 
 Markdown es un lenguaje de marcado ligero diseñado para crear contenido con formato de manera fácil y legible utilizando texto plano. Se usa para escribir en un formato que es más simple que HTML, permitiendo añadir rápidamente elementos como títulos, negritas, cursivas, listas y enlaces, y luego se convierte a HTML u otros formatos para su visualización. 
 
