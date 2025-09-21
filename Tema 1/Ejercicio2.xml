@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dealership>
+    <car>
+        <make>Toyota</make>
+        <model>Camry</model>
+        <year>2020</year>
+        <price>24000</price>
+    </car>
+    <car>
+        <make>Honda</make>
+        <model>Civic</model>
+        <year>2019</year>
+        <price>22000</price>
+    </car>
+    <car>
+        <make>Ford</make>
+        <model>Mustang</model>
+        <year>2021</year>
+        <price>26000</price>
+    </car>
+    <car>
+        <make>Chevrolet</make>
+        <model>Malibu</model>
+        <year>2018</year>
+        <price>21000</price>
+    </car>
+    <car>
+        <make>Nissan</make>
+        <model>Altima</model>
+        <year>2020</year>
+        <price>23000</price>
+    </car>
+</dealership>
