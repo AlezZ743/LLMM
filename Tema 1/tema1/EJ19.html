@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes flotantes</title>
+    <style>
+        .float-left {
+            float: left;
+            margin-right: 15px; /* espacio entre la imagen y el texto */
+            width: 150px; /* ancho de la imagen */
+        }
+        .float-right {
+            float: right;
+            margin-left: 15px; /* espacio entre la imagen y el texto */
+            width: 150px;
+        }
+        p {
+            text-align: justify;
+        }
+        /* Limpiar flotado después del párrafo */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clearfix">
+        <img src="./imgs/movil.png" alt="Imagen izquierda" class="float-left">
+        <p>
+            Este es un párrafo de ejemplo que se ajusta junto a la imagen flotante a la izquierda.
+            El texto fluye alrededor de la imagen, mostrando cómo se pueden combinar imágenes y
+            texto de manera ordenada usando CSS.
+        </p>
+    </div>
+
+    <div class="clearfix" style="margin-top: 20px;">
+        <img src="./imgs/movil.png" alt="Imagen derecha" class="float-right">
+        <p>
+            Este es otro párrafo de ejemplo, pero en este caso la imagen está flotando a la derecha.
+            Nuevamente, el texto se ajusta al lado de la imagen, manteniendo una separación agradable
+            gracias al margen lateral aplicado a la imagen.
+        </p>
+    </div>
+
+</body>
+</html>

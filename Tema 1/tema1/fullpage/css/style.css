@@ -1,0 +1,235 @@
+/* Base styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header, nav, footer {
+    background-color: #121212;
+    color: #f1f1f1;
+    padding: 15px 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #f1f1f1;
+    margin-right: 20px;
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #1ed760;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0%;
+    background: #1ed760;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav a:hover::after, nav a.active::after {
+    width: 100%;
+}
+
+/* Container styling */
+.container {
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    color: #1ed760;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    color: #ffffff;
+}
+
+/* Table of Contents */
+.toc {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-left: 5px solid #1ed760;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.toc ul li a:hover {
+    color: #1ed760;
+    transform: translateX(5px);
+}
+
+/* Sections styling */
+section {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+pre {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+
+pre:hover {
+    transform: scale(1.02);
+}
+
+img.example {
+    border: 1px solid #444;
+    max-width: 25%;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+}
+
+img.example:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+/* Container for cards */
+.language-cards {
+    display: flex;
+    flex-direction: column;  /* stack vertically */
+    align-items: center;     /* center horizontally */
+    gap: 40px;               /* space between cards */
+    margin-top: 20px;
+}
+
+/* Individual card styling */
+.card {
+    display: block;           /* ensure it behaves as a block */
+    width: 320px;             /* fixed width */
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.card h4 {
+    margin: 10px 0 5px 0;
+    color: #1ed760;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+}
+
+.card:hover img {
+    transform: scale(1.15);
+}
+
+/* Responsive design */
+@media(max-width: 768px) {
+    .card {
+        width: 80%;   /* cards shrink for small screens */
+        padding: 20px;
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #121212;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 15px 20px;
+    border-top: 2px solid #1ed760;
+}
+
+footer a {
+    color: #1ed760;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.2s;
+}
+
+footer a:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .toc {
+        margin-bottom: 20px;
+    }
+}

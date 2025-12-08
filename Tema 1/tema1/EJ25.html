@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rellena tu CV - Controles Adicionales</title>
+    <style>
+        /* Estilos CSS - Mantenidos del ejercicio anterior */
+        body {
+            font-family: Tahoma, Verdana, Segoe UI, sans-serif;
+            background-color: #eee;
+            margin: 20px;
+        }
+
+        .form-window {
+            width: 480px; /* Incrementado ligeramente para el fieldset */
+            margin: 0 auto;
+            border: 1px solid #777;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background-color: white;
+        }
+
+        .window-title-bar {
+            background: linear-gradient(to bottom, #d4e0ff 0%, #a0c0ff 100%);
+            color: #333;
+            padding: 4px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            border-bottom: 1px solid #777;
+        }
+
+        .form-content {
+            padding: 15px 25px 25px 25px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        /* Estilo para cada campo (label + input/select) */
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9em;
+            margin-bottom: 3px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            padding: 3px;
+            border: 1px solid #888;
+            background-color: #fff;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+             width: 90%; /* Ancho general para campos de texto */
+        }
+        
+        #dni-input {
+            width: 30%; 
+        }
+
+        /* Estilo para los radio buttons (Sexo) */
+        .radio-group {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Estilos específicos para los nuevos controles */
+        
+        /* Contenedor para la fecha de nacimiento para alinear los campos */
+        .birthdate-group {
+            display: flex;
+            gap: 5px;
+            align-items: baseline;
+            margin-bottom: 15px;
+        }
+
+        .birthdate-group input[type="text"] {
+            width: 40px; /* Ancho fijo para día y año */
+        }
+        
+        .birthdate-group select {
+            width: auto;
+            padding: 3px 6px;
+        }
+
+        /* Estilo para el campo de selección múltiple (Temas de interés) */
+        #topics-select {
+            width: 100%;
+            height: 120px; /* Altura para mostrar varias opciones */
+        }
+
+        /* Estilos para los botones de acción */
+        .button-group {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-group button {
+            padding: 5px 15px;
+            border: 1px solid #777;
+            background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        /* Estilo para el fieldset */
+        fieldset {
+            border: 1px solid #999;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-window">
+        <div class="window-title-bar">
+            Rellena tu CV
+        </div>
+
+        <div class="form-content">
+            <h1>Rellena tu CV</h1>
+
+            <form action="/submit_cv" method="POST">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="30" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" maxlength="80" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" maxlength="10" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni-input" name="dni" required>
+                </div>
+
+                <div class="radio-group">
+                    <label>Sexo</label>
+                    <input type="radio" id="hombre" name="sexo" value="hombre" checked>
+                    <label for="hombre" style="display: inline; margin-right: 15px;">Hombre</label>
+                    
+                    <input type="radio" id="mujer" name="sexo" value="mujer">
+                    <label for="mujer" style="display: inline;">Mujer</label>
+                </div>
+                
+                <fieldset>
+                    <legend>Datos personales</legend>
+
+                    <div class="form-group">
+                        <label for="provincia">Provincia</label>
+                        <select id="provincia" name="provincia">
+                            <option value="">- selecciona -</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Barcelona">Barcelona</option>
+                            <option value="Sevilla">Sevilla</option>
+                            </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fecha de nacimiento</label>
+                        <div class="birthdate-group">
+                            <input type="text" name="dia_nac" placeholder="Día" maxlength="2">
+                            
+                            <select name="mes_nac">
+                                <option value="1">Enero</option>
+                                <option value="2">Febrero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                            
+                            <input type="text" name="ano_nac" placeholder="Año" maxlength="4">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Temas de interés</label>
+                        <select id="topics-select" name="temas[]" multiple size="5">
+                            <option value="BD">Administración de bases de datos</option>
+                            <option value="Prog">Análisis y programación</option>
+                            <option value="Arqui">Arquitectura</option>
+                            <option value="Calidad">Calidad</option>
+                            <option value="ERP">ERP, CRM, Business Intelligence</option>
+                            <option value="Web">Desarrollo Web</option>
+                        </select>
+                    </div>
+
+                </fieldset>
+                <div class="form-group file-upload-group">
+                    <label for="foto">Incluir mi foto</label>
+                    <input type="file" id="foto" name="foto">
+                </div>
+                
+                <div class="form-group">
+                    <input type="checkbox" id="newsletter" name="newsletter" checked>
+                    <label for="newsletter" style="display: inline;">Suscribirme al boletín de novedades</label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Guardar cambios</button>
+                    <button type="reset">Borrar los datos introducidos</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

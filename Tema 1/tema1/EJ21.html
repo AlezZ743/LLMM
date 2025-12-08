@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Miniaturas</title>
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; /* espacio entre miniaturas */
+    }
+    .gallery a {
+      display: block;
+      width: 150px; /* ancho de la miniatura */
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery a:hover {
+      transform: scale(1.05);
+      border-color: #333;
+    }
+    .gallery img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Galería de Miniaturas</h2>
+
+<div class="gallery">
+  <a href="./imgs/pic_trulli.jpg" target="_blank">
+    <img src="./imgs/pic_trulli.jpg" alt="Italian Trulli">
+  </a>
+  <a href="./imgs/img_girl.jpg" target="_blank">
+    <img src="./imgs/img_girl.jpg" alt="Girl in a jacket">
+  </a>
+  <a href="./imgs/img_chania.jpg" target="_blank">
+    <img src="./imgs/img_chania.jpg" alt="Flowers in Chania">
+  </a>
+</div>
+
+</body>
+</html>

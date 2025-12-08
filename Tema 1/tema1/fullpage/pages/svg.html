@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Tags - Web4U</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>SVG Tags - Web4U</h1>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="./html.html">HTML</a>
+        <a href="./css.html">CSS</a>
+        <a href="svg.html" class="active">SVG</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Explore SVG Tags</h2>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#circle">circle</a></li>
+            <li><a href="#rect">rect</a></li>
+            <li><a href="#line">line</a></li>
+            <li><a href="#polygon">polygon</a></li>
+            <li><a href="#text">text</a></li>
+        </ul>
+    </div>
+
+    <!-- Circle -->
+    <section id="circle">
+        <h2>&lt;circle&gt;</h2>
+        <p>Draws a circle with a specified center and radius.</p>
+        <pre>
+&lt;svg width="100" height="100"&gt;
+    &lt;circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red" /&gt;
+&lt;/svg&gt;
+        </pre>
+        <img src="../imgs/circle.png" alt="Circle Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/SVG/shapes.html#CircleElement" target="_blank" title="W3C SVG &lt;circle&gt; tag reference">W3C &lt;circle&gt;</a></p>
+    </section>
+
+    <!-- Rect -->
+    <section id="rect">
+        <h2>&lt;rect&gt;</h2>
+        <p>Draws a rectangle with optional rounded corners.</p>
+        <pre>
+&lt;svg width="100" height="100"&gt;
+    &lt;rect x="10" y="10" width="80" height="50" stroke="black" stroke-width="2" fill="blue" /&gt;
+&lt;/svg&gt;
+        </pre>
+        <img src="../imgs/rectangle.png" alt="Rectangle Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/SVG/shapes.html#RectElement" target="_blank" title="W3C SVG &lt;rect&gt; tag reference">W3C &lt;rect&gt;</a></p>
+    </section>
+
+    <!-- Line -->
+    <section id="line">
+        <h2>&lt;line&gt;</h2>
+        <p>Draws a straight line between two points.</p>
+        <pre>
+&lt;svg width="100" height="100"&gt;
+    &lt;line x1="10" y1="10" x2="90" y2="90" stroke="green" stroke-width="2" /&gt;
+&lt;/svg&gt;
+        </pre>
+        <img src="../imgs/line.png" alt="Line Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/SVG/shapes.html#LineElement" target="_blank" title="W3C SVG &lt;line&gt; tag reference">W3C &lt;line&gt;</a></p>
+    </section>
+
+    <!-- Polygon -->
+    <section id="polygon">
+        <h2>&lt;polygon&gt;</h2>
+        <p>Draws a closed shape with multiple points.</p>
+        <pre>
+&lt;svg width="100" height="100"&gt;
+    &lt;polygon points="50,10 90,80 10,80" stroke="purple" stroke-width="2" fill="yellow" /&gt;
+&lt;/svg&gt;
+        </pre>
+        <img src="../imgs/triangle.png" alt="Polygon Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/SVG/shapes.html#PolygonElement" target="_blank" title="W3C SVG &lt;polygon&gt; tag reference">W3C &lt;polygon&gt;</a></p>
+    </section>
+
+    <!-- Text -->
+    <section id="text">
+        <h2>&lt;text&gt;</h2>
+        <p>Displays text inside an SVG.</p>
+        <pre>
+&lt;svg width="200" height="50"&gt;
+    &lt;text x="10" y="30" font-family="Arial" font-size="20" fill="black"&gt;Hello SVG&lt;/text&gt;
+&lt;/svg&gt;
+        </pre>
+        <img src="../imgs/text.png" alt="Text Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/SVG/text.html#TextElement" target="_blank" title="W3C SVG &lt;text&gt; tag reference">W3C &lt;text&gt;</a></p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Web4U | <a href="../pdfs/svg.pdf" download="../pdfs/svg.pdf" title="Download SVG PDF">Download PDF</a></p>
+</footer>
+</body>
+</html>

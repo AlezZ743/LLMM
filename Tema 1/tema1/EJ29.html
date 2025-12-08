@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video de YouTube Embebido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #cc0000; /* Color de YouTube */
+        }
+
+        /* Contenedor responsivo para el iFrame */
+        .video-responsive {
+            /* Centro el contenedor */
+            margin: 20px auto;
+            max-width: 800px;
+            
+            /* Hago el contenedor responsivo */
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 (9 / 16 = 0.5625) */
+            height: 0;
+            overflow: hidden;
+        }
+
+        /* Estilos del iFrame */
+        .video-responsive iframe {
+
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mi Página con Video de YouTube</h1>
+    
+    <div class="video-responsive">
+        <iframe src="https://www.youtube.com/embed/U2rMGapraVY?si=x6PvFY0LCS98t4IP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags - Web4U</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>HTML Tags - Web4U</h1>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="html.html" class="active">HTML</a>
+        <a href="./css.html">CSS</a>
+        <a href="./svg.html">SVG</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Explore HTML Tags</h2>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#p">Paragraph (&lt;p&gt;)</a></li>
+            <li><a href="#a">Link (&lt;a&gt;)</a></li>
+            <li><a href="#img">Image (&lt;img&gt;)</a></li>
+            <li><a href="#table">Table (&lt;table&gt;)</a></li>
+            <li><a href="#form">Form (&lt;form&gt;)</a></li>
+        </ul>
+    </div>
+
+    <!-- Paragraph Tag -->
+    <section id="p">
+        <h2>Paragraph - &lt;p&gt;</h2>
+        <p>Defines a paragraph of text.</p>
+        <pre>
+&lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+        </pre>
+        <img src="../imgs/p.png" alt="Paragraph Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/html52/textlevel-semantics.html#the-p-element" target="_blank" title="W3C HTML &lt;p&gt; tag reference">W3C &lt;p&gt; tag</a></p>
+    </section>
+
+    <!-- Link Tag -->
+    <section id="a">
+        <h2>Link - &lt;a&gt;</h2>
+        <p>Creates a hyperlink to another page or location.</p>
+        <pre>
+&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;
+        </pre>
+        <img src="../imgs/a.png" alt="Link Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/html52/textlevel-semantics.html#the-a-element" target="_blank" title="W3C HTML &lt;a&gt; tag reference">W3C &lt;a&gt; tag</a></p>
+    </section>
+
+    <!-- Image Tag -->
+    <section id="img">
+        <h2>Image - &lt;img&gt;</h2>
+        <p>Embeds an image in the page. Always include an <code>alt</code> attribute for accessibility.</p>
+        <pre>
+&lt;img src="images/example.jpg" alt="Example Image"&gt;
+        </pre>
+        <img src="../imgs/example.jpg" alt="Image Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/html52/embedded-content-0.html#the-img-element" target="_blank" title="W3C HTML &lt;img&gt; tag reference">W3C &lt;img&gt; tag</a></p>
+    </section>
+
+    <!-- Table Tag -->
+    <section id="table">
+        <h2>Table - &lt;table&gt;</h2>
+        <p>Displays tabular data.</p>
+        <pre>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Alice&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+        <img src="../imgs/table.png" alt="Table Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/html52/tabular-data.html#the-table-element" target="_blank" title="W3C HTML &lt;table&gt; tag reference">W3C &lt;table&gt; tag</a></p>
+    </section>
+
+    <!-- Form Tag -->
+    <section id="form">
+        <h2>Form - &lt;form&gt;</h2>
+        <p>Collects user input.</p>
+        <pre>
+&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+        </pre>
+        <img src="../imgs/form.png" alt="Form Example" class="example">
+        <p>More info: <a href="https://www.w3.org/TR/html52/sec-forms.html#the-form-element" target="_blank" title="W3C HTML &lt;form&gt; tag reference">W3C &lt;form&gt; tag</a></p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Web4U | <a href="../pdfs/html.pdf" download="../pdfs/html.pdf"  title="Download HTML PDF">Download PDF</a></p>
+</footer>
+</body>
+</html>

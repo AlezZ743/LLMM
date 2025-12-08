@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos en HTML5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        h1, h2 {
+            color: #333;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .video-box {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 45%; /* Ajuste para que quepan dos en una línea */
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        video {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejemplo de Inserción de Videos en HTML5</h1>
+
+    <div class="video-container">
+
+        <div class="video-box">
+            <h2>Video 1: Fondo o Bucle</h2>
+            <p>Se reproduce automáticamente y en bucle, sin controles visibles.</p>
+            
+            <video 
+                src="./imgs/video.mp4" 
+                autoplay 
+                loop 
+                muted
+                poster="./imgs/video.mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+
+        <div class="video-box">
+            <h2>Video 2: Interactivo con Controles</h2>
+            <p>Incluye barra de reproducción, volumen y pantalla completa.</p>
+            
+            <video 
+                src="./imgs/video.mp4" 
+                controls
+                poster="./imgs/video.mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+        
+    </div>
+    
+    <hr>
+    <h3>Nota Importante:</h3>
+    <p>
+        Debes reemplazar las rutas <code>"ruta/a/tu/video1.mp4"</code> y <code>"ruta/a/tu/video2.mp4"</code> 
+        por las URLs o rutas locales reales de tus archivos de video (.mp4, .webm, etc.). 
+        También puedes usar el atributo <code>poster</code> para mostrar una imagen de previsualización mientras el video carga.
+    </p>
+
+</body>
+</html>

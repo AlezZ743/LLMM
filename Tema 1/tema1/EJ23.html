@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú con iFrame - Artículos de Wikipedia</title>
+    <style>
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+
+        #menu-bar {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #menu-bar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        #menu-bar a:hover {
+            background-color: #575757;
+        }
+
+        /* --- Estilos del Contenedor del iFrame --- */
+        #iframe-container {
+            text-align: center; 
+            padding: 20px;
+        }
+
+        /* --- Estilos del iFrame --- */
+        #wikipedia-iframe {
+            width: 90%; 
+            height: 600px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu-bar">
+        <a href="#" onclick="cargarArticulo('HTML', 'https://es.wikipedia.org/wiki/HTML'); return false;">HTML</a>
+        <a href="#" onclick="cargarArticulo('CSS', 'https://es.wikipedia.org/wiki/CSS'); return false;">CSS</a>
+        <a href="#" onclick="cargarArticulo('JavaScript', 'https://es.wikipedia.org/wiki/JavaScript'); return false;">JAVASCRIPT</a>
+        <a href="#" onclick="cargarArticulo('Ajax', 'https://es.wikipedia.org/wiki/AJAX'); return false;">AJAX</a>
+    </div>
+
+    <div id="iframe-container">
+        <h2>Contenido de Wikipedia: <span id="current-topic">Selecciona un tema</span></h2>
+        <iframe id="wikipedia-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+
+        function cargarArticulo(topic, url) {
+            // 1. Obtiene el elemento iFrame
+            const iframe = document.getElementById('wikipedia-iframe');
+            
+            // 2. Asigna la URL al atributo 'src' del iFrame, cargando el artículo.
+            iframe.src = url;
+
+            // 3. Actualiza el título para que el usuario sepa qué está viendo.
+            document.getElementById('current-topic').textContent = topic;
+        }
+
+        // Cargar el artículo de HTML por defecto al iniciar la página
+        window.onload = function() {
+            // Solo para que no se quede vacío al inicio, podés quitar esta línea si preferís que esté en blanco.
+            cargarArticulo('HTML', 'https://es.wikipedia.org/wiki/HTML'); 
+        };
+    </script>
+
+</body>
+</html>

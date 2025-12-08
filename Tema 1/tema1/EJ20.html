@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejemplo imágenes flotantes W3Schools</title>
+  <style>
+    .float-left {
+      float: left;
+      margin: 10px 15px 10px 0;  /* espaciado derecha */
+      width: 200px;
+    }
+    .float-right {
+      float: right;
+      margin: 10px 0 10px 15px;  /* espaciado izquierda */
+      width: 200px;
+    }
+    p {
+      text-align: justify;
+    }
+    /* Para limpiar floats antes de un nuevo bloque */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="clearfix">
+    <img src="./imgs/pic_trulli.jpg" alt="Italian Trulli" class="float-left">
+    <p>
+      Este es un párrafo junto a la imagen “Italian Trulli”. La imagen flota a la izquierda y el texto la rodea, justo como en los ejemplos del tutorial de W3Schools. Puedes ver cómo el contenido se ajusta alrededor de la fotografía sin problemas.
+    </p>
+  </div>
+
+  <div class="clearfix">
+    <img src="./imgs/img_girl.jpg" alt="Girl in a jacket" class="float-right">
+    <p>
+      Aquí tienes otro párrafo, ahora con la imagen “Girl in a jacket” flotando a la derecha. El texto fluye a la izquierda de la imagen, demostrando cómo puedes alternar la posición de las imágenes para variar el diseño visual.
+    </p>
+  </div>
+
+  <div class="clearfix">
+    <img src="./imgs/img_chania.jpg" alt="Flowers in Chania" class="float-left">
+    <p>
+      Finalmente, un tercer bloque con la imagen “Flowers in Chania”, esta vez flotando de nuevo a la izquierda. El texto acompaña a la derecha, mostrando cómo múltiples imágenes flotantes se pueden usar en una sola página sin romper el flujo del contenido.
+    </p>
+  </div>
+
+</body>
+</html>
