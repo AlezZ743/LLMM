@@ -1,0 +1,82 @@
+body {
+    background-color: #666666; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90%; 
+}
+
+#main-container div {
+    padding: 6px;
+    border: 1px solid black; 
+    box-sizing: border-box;
+}
+
+#main-container {
+    width: 779px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 0;
+    border: none;
+}
+
+#header {
+    background-color: #990000; 
+    width: 100%;
+    border-bottom: none;
+}
+
+#header h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+#navigation {
+    background-color: #CCCCCC; 
+    width: 100%;
+    border-top: none; 
+    border-bottom: none;
+}
+
+#navigation a {
+    color: #333333;
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+#navigation a:hover {
+    text-decoration: underline;
+}
+
+#content {
+    background-color: #999999;
+    width: 464px;
+    margin-bottom: 6px; 
+    float: left;
+    margin-right: 20px; 
+}
+
+.poe-portrait {
+    float: left; 
+    margin: 0 10px 10px 0; 
+    max-width: 120px; 
+    height: auto;
+}
+
+#rightpanel {
+    background-color: #999999;
+    width: 295px;
+    margin-bottom: 6px;
+    float: right; 
+}
+
+#footer {
+    background-color: #CCCCCC;
+    width: 100%;
+    text-align: center;
+    clear: both; 
+    border-top: none; 
+}
+
+#footer p {
+    margin: 0;
+}

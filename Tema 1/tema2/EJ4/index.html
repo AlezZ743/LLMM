@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Contenedor del menú. Se usa overflow:hidden para contener los elementos flotantes. */
+.horizontal-menu {
+    list-style-type: none; /* Quita los puntos de lista */
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Color de fondo base (opcional) */
+    overflow: hidden; 
+}
+
+/* Estilo para cada elemento de la lista (<li>) */
+.horizontal-menu li {
+    float: left; /* Hace que los elementos floten uno al lado del otro (horizontal) */
+}
+
+/* Estilo para los enlaces (<a>) dentro del menú */
+.horizontal-menu li a {
+    display: block; /* Ocupa todo el espacio del <li> */
+    color: white; /* Color de texto inicial */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Estilo para los enlaces al pasar el ratón (hover) */
+.horizontal-menu li a:hover {
+    background-color: #555; /* Fondo gris oscuro al pasar el ratón */
+    color: white; /* Texto blanco al pasar el ratón */
+}
+
+/* Estilo para el enlace activo (opcional) */
+.horizontal-menu li a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>Horizontal Menu</h1>
+
+<ul class="horizontal-menu">
+    <li><a class="active" href="#">Home</a></li>
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+    <li><a href="#">Link 4</a></li>
+</ul>
+
+</body>
+</html>
