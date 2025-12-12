@@ -17,10 +17,10 @@ Este repositorio incluye actividades llevadas a cabo en el módulo Lenguaje de M
 ## **Actividades**
 
 |  [TEMA 1](https://github.com/AlezZ743/LLMM/tree/main/Tema%201/tema1)     |
-|-----------------------------------------------------------------------------------------|
+
 |  [TEMA 2]([https://github.com/AlezZ743/LLMM/tree/main/Tema%201/tema1](https://github.com/AlezZ743/LLMM/tree/main/Tema%201/tema2))     |
-|-----------------------------------------------------------------------------------------|
+
 |  [Web4U]([https://github.com/AlezZ743/LLMM/tree/main/Tema%201/tema1](https://github.com/AlezZ743/LLMM/tree/main/Tema%201/Web4U))     |
-|-----------------------------------------------------------------------------------------|
+
 
 
