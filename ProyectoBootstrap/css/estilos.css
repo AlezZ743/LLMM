@@ -1,3 +1,65 @@
+/* Paleta de colores pastel */
+:root {
+    --pastel-blue: #bde0fe;
+    --pastel-pink: #ffafcc;
+    --pastel-yellow: #faf9f6;
+    --pastel-green: #cdb4db;
+    --text-dark: #555;
+}
+
+body {
+    background-color: var(--pastel-yellow);
+    color: var(--text-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar personalizada */
+.navbar {
+    background-color: var(--pastel-blue) !important;
+}
+
+.nav-link {
+    color: #444 !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--pastel-pink) !important;
+}
+
+/* Animación de entrada (Requisito 5) */
+.animacion-suave {
+    animation: aparecer 1.5s ease-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Transición en imágenes (Requisito 5) */
+.img-hover {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 15px;
+}
+
+.img-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Ajustes de secciones */
+.section-padding {
+    padding: 60px 0;
+}
+
+footer {
+    background-color: var(--pastel-green);
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
 /* Animación de entrada suave */
 .fade-in {
     animation: fadeIn ease 2s;
