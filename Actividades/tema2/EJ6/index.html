@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Colores RGB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        /* Contenedor principal con sombra */
+        .table-container {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 10px 5px; /* Espaciado entre celdas */
+            width: 100%;
+        }
+
+        /* Estilo de las cabeceras */
+        th {
+            background-color: #666;
+            color: white;
+            padding: 8px 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 2px;
+        }
+
+        /* Colores específicos para los textos de cabecera */
+        .head-red { color: #ff9999; }
+        .head-green { color: #99ff99; }
+        .head-blue { color: #99ccff; }
+
+        /* Estilo de las celdas de datos */
+        td {
+            padding: 10px;
+            color: #333;
+            font-size: 1em;
+            text-align: left;
+        }
+
+        /* Alineación central para los números */
+        .num {
+            text-align: left;
+            width: 60px;
+        }
+
+        /* Fila de pie de página (Footer) */
+        .footer-row td {
+            background-color: #666;
+            color: #ddd;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        .highlight-code {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th class="head-red">Red</th>
+                <th class="head-green">Green</th>
+                <th class="head-blue">Blue</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Light Sand</td>
+                <td class="num">254</td>
+                <td class="num">255</td>
+                <td class="num">239</td>
+            </tr>
+            <tr>
+                <td>Beige</td>
+                <td class="num">245</td>
+                <td class="num">245</td>
+                <td class="num">220</td>
+            </tr>
+            <tr>
+                <td>Chocolate</td>
+                <td class="num">210</td>
+                <td class="num">105</td>
+                <td class="num">30</td>
+            </tr>
+            <tr>
+                <td>Gray</td>
+                <td class="num">190</td>
+                <td class="num">190</td>
+                <td class="num">190</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="footer-row">
+                <td colspan="4">
+                    Use like this: <span class="highlight-code">color: rgb(RED, GREEN, BLUE);</span>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+</body>
+</html>

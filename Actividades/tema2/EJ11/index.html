@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav y Galería Pastel</title>
+    <style>
+        :root {
+            --bg: #fdfcf0;
+            --nav-bg: #8da399;
+            --card-bg: #ffffff;
+            --pastel-red: #ffb7b2;
+            --pastel-blue: #a2e1db;
+            --pastel-green: #b2e2f2;
+            --pastel-yellow: #ffffba;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Barra de Navegación */
+        nav {
+            width: 100%;
+            background-color: var(--nav-bg);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Contenedor Galería */
+        .gallery {
+            padding: 20px;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap; /* Permite que las imágenes bajen */
+            justify-content: center;
+        }
+
+        /* Estilo cada ítem (W3Schools style) */
+        .responsive {
+            padding: 10px;
+            float: left; /* Siguiendo la lógica tradicional */
+            width: 24.99%; /* 4 columnas por defecto */
+            box-sizing: border-box;
+        }
+
+        .img-card {
+            background-color: var(--card-bg);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .img-card .box {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .desc {
+            padding: 15px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* --- Media Queries --- */
+
+        /* Tablet: 2 columnas */
+        @media only screen and (max-width: 700px) {
+            .responsive {
+                width: 49.99%;
+                margin: 0;
+            }
+        }
+
+        /* Móvil: 1 columna */
+        @media only screen and (max-width: 500px) {
+            .responsive {
+                width: 100%;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Galería</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <h1 style="color: #88a0a8; margin-top: 30px;">Galería Responsiva</h1>
+
+    <div class="gallery">
+        <div class="responsive">
+            <div class="img-card">
+                <div class="box" style="background-color: var(--pastel-red);">🍓</div>
+                <div class="desc">Descripción de la fresa</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="img-card">
+                <div class="box" style="background-color: var(--pastel-blue);">🍒</div>
+                <div class="desc">Descripción de la cereza</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="img-card">
+                <div class="box" style="background-color: var(--pastel-green);">🍐</div>
+                <div class="desc">Descripción de la pera</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="img-card">
+                <div class="box" style="background-color: var(--pastel-yellow);">🍌</div>
+                <div class="desc">Descripción del plátano</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

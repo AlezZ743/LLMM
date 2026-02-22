@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Responsiva Pastel</title>
+    <style>
+        :root {
+            --cabecera: #ffb7b2; /* Rosa pastel */
+            --nav-bg: #b2e2f2;   /* Azul pastel */
+            --sidebar: #ffffba;  /* Amarillo pastel */
+            --contenido: #ffffff; 
+            --pie: #a2e1db;      /* Turquesa pastel */
+            --texto: #555;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fdfcf0;
+            color: var(--texto);
+        }
+
+        /* 1. Cabecera */
+        header {
+            background-color: var(--cabecera);
+            padding: 30px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        /* 2. Barra de navegación */
+        nav {
+            overflow: hidden;
+            background-color: #8da399;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover { background-color: #7a8f86; }
+
+        /* Contenedor de columnas */
+        .row {
+            display: flex;
+            flex-wrap: wrap; /* Permite que las columnas bajen en móviles */
+        }
+
+        /* 3. Columna lateral (30%) */
+        aside {
+            flex: 30%;
+            background-color: var(--sidebar);
+            padding: 20px;
+        }
+
+        /* 4. Columna principal (70%) */
+        main {
+            flex: 70%;
+            background-color: var(--contenido);
+            padding: 20px;
+        }
+
+        /* 5. Pie de página */
+        footer {
+            background-color: var(--pie);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* --- MEDIA QUERIES --- */
+
+        /* Cuando la pantalla tiene menos de 700px, las columnas se apilan */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mi Blog de Frutas</h1>
+    </header>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Recetas</a>
+        <a href="#">Sobre mí</a>
+    </nav>
+
+    <div class="row">
+        <aside>
+            <h2>Sobre las Frutas</h2>
+            <p>La sandía es una fruta originaria de África, pero tiene una gran presencia en Asia.</p>
+            <ul>
+                <li>Fresas</li>
+                <li>Cerezas</li>
+                <li>Peras</li>
+            </ul>
+        </aside>
+
+        <main>
+            <h2>El Plátano</h2>
+            <p>El plátano es un fruto con cualidades variables en tamaño, color y firmeza, generalmente curvado y carnoso.</p>
+            <p>Es rico en almidón y su cáscara puede ser verde, amarilla, roja o marrón cuando está madura.</p>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2026 - Diseño Responsivo Pastel</p>
+    </footer>
+
+</body>
+</html>
