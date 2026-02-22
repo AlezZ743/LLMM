@@ -1,78 +1,58 @@
-/* Paleta de colores pastel */
 :root {
     --pastel-blue: #bde0fe;
     --pastel-pink: #ffafcc;
-    --pastel-yellow: #faf9f6;
-    --pastel-green: #cdb4db;
-    --text-dark: #555;
+    --pastel-purple: #cdb4db;
+    --pastel-cream: #faf9f6;
 }
 
 body {
-    background-color: var(--pastel-yellow);
-    color: var(--text-dark);
+    background-color: var(--pastel-cream);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #555;
 }
 
-/* Navbar personalizada */
-.navbar {
-    background-color: var(--pastel-blue) !important;
-}
-
-.nav-link {
-    color: #444 !important;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--pastel-pink) !important;
-}
-
-/* Animación de entrada (Requisito 5) */
-.animacion-suave {
-    animation: aparecer 1.5s ease-out;
-}
-
-@keyframes aparecer {
-    from { opacity: 0; transform: translateY(20px); }
+/* Animación de revelado suave */
+@keyframes revealUp {
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Transición en imágenes (Requisito 5) */
-.img-hover {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+.animar {
+    animation: revealUp 1s ease-out forwards;
+}
+
+/* Tarjetas interactivas */
+.card-hover {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 20px;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Estilo para el caption del carrusel para que se lea siempre */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
+    padding: 1rem;
+    bottom: 5%;
+    margin: auto;
+    width: fit-content;
 }
 
-.img-hover:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.btn-pastel {
+    background-color: var(--pastel-pink);
+    color: white;
+    border-radius: 50px;
+    padding: 10px 30px;
+    border: none;
+    transition: background 0.3s;
 }
 
-/* Ajustes de secciones */
-.section-padding {
-    padding: 60px 0;
-}
-
-footer {
-    background-color: var(--pastel-green);
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-/* Animación de entrada suave */
-.fade-in {
-    animation: fadeIn ease 2s;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Transición en botones o imágenes */
-.img-hover:hover {
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
-    cursor: pointer;
+.btn-pastel:hover {
+    background-color: var(--pastel-purple);
+    color: white;
 }
