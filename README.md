@@ -25,6 +25,16 @@ Este repositorio incluye actividades llevadas a cabo en el módulo Lenguaje de M
 | [EJERCICIO 8](Actividades/tema3/EJ8/EJ8.html) | |
 | [EJERCICIO 9](Actividades/tema3/EJ9/EJ9.html) | |
 | [EJERCICIO 10](Actividades/tema3/EJ10/EJ10.html) | |
+| [EJERCICIO 11](Actividades/tema3/EJ11/EJ11.html) | |
+| [EJERCICIO 12](Actividades/tema3/EJ12/EJ12.html) | |
+| [EJERCICIO 13](Actividades/tema3/EJ13/EJ13.html) | |
+| [EJERCICIO 14](Actividades/tema3/EJ14/EJ14.html) | |
+| [EJERCICIO 15](Actividades/tema3/EJ15/EJ15.html) | |
+| [EJERCICIO 16](Actividades/tema3/EJ16/EJ16.html) | |
+| [EJERCICIO 17](Actividades/tema3/EJ17/EJ17.html) | |
+| [EJERCICIO 18](Actividades/tema3/EJ18/EJ18.html) | |
+| [EJERCICIO 19](Actividades/tema3/EJ19/EJ19.html) | |
+| [EJERCICIO 20](Actividades/tema3/EJ20/EJ20.html) | |
 
 
 
