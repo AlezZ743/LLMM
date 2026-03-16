@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar elementos del DOM</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 30px; background-color: #f4f4f4; text-align: center; }
+        .contenedor { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-block; min-width: 300px; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #ffebee; margin: 5px 0; padding: 10px; border-radius: 4px; border-left: 5px solid #ef5350; transition: 0.3s; }
+        button { padding: 10px 20px; background-color: #e53935; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        button:hover { background-color: #c62828; }
+        #mensaje { color: #666; font-style: italic; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Mi Lista de Tareas</h2>
+        <ul id="listaTareas">
+            <li>Aprender variables</li>
+            <li>Aprender innerHTML</li>
+            <li>Aprender createElement</li>
+            <li>Aprender removeChild</li>
+        </ul>
+
+        <button onclick="eliminarUltimo()">Borrar última tarea</button>
+        <p id="mensaje"></p>
+    </div>
+
+    <script>
+        function eliminarUltimo() {
+            // 1. Accedemos al elemento padre (la lista)
+            var lista = document.getElementById("listaTareas");
+
+            // 2. Comprobamos si tiene hijos para evitar errores
+            if (lista.hasChildNodes()) {
+                // Seleccionamos el último hijo
+                var ultimoHijo = lista.lastElementChild;
+                
+                // 3. Usamos removeChild para eliminarlo
+                lista.removeChild(ultimoHijo);
+                
+                document.getElementById("mensaje").innerHTML = "Elemento eliminado correctamente.";
+            } else {
+                // 4. Si no hay nada que borrar, informamos al usuario
+                document.getElementById("mensaje").innerHTML = "No quedan elementos para borrar.";
+                document.getElementById("mensaje").style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>

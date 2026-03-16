@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Bienvenida</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding-top: 50px; background-color: #f4f7f6; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 350px; }
+        h2 { color: #333; margin-bottom: 20px; font-size: 1.5rem; }
+        label { display: block; margin-bottom: 5px; color: #666; font-size: 0.9rem; }
+        input { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #5c67f2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; transition: 0.3s; }
+        button:hover { background-color: #4a54e1; }
+        #mensajeSaludo { margin-top: 25px; padding: 15px; border-radius: 6px; background-color: #eef2ff; color: #3730a3; display: none; line-height: 1.5; border-left: 4px solid #5c67f2; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Registro</h2>
+        
+        <form id="miFormulario" name="formUsuario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required>
+
+            <button type="button" onclick="enviarDatos()">Enviar datos</button>
+        </form>
+
+        <div id="mensajeSaludo"></div>
+    </div>
+
+    <script>
+        function enviarDatos() {
+            // 1. Accedemos al formulario usando la colección document.forms
+            var formulario = document.forms["formUsuario"];
+
+            // 2. Declaramos las variables y extraemos los valores de los inputs
+            var nombre = formulario["nombre"].value;
+            var apellidos = formulario["apellidos"].value;
+
+            // Validación simple para asegurar que no estén vacíos
+            if (nombre.trim() === "" || apellidos.trim() === "") {
+                alert("Por favor, rellena todos los campos.");
+                return;
+            }
+
+            // 3. Creamos el texto de saludo
+            var saludoFinal = "Hola <strong>" + nombre + " " + apellidos + "</strong>, gracias por completar el formulario.";
+
+            // 4. Mostramos el mensaje usando innerHTML
+            var contenedor = document.getElementById("mensajeSaludo");
+            contenedor.innerHTML = saludoFinal;
+            
+            // Hacemos visible el div (que estaba oculto con CSS)
+            contenedor.style.display = "block";
+
+            // Opcional: Limpiar el formulario después de enviar
+            formulario.reset();
+        }
+    </script>
+
+</body>
+</html>

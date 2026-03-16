@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9: setTimeout y clearTimeout</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1a1a2e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .panel {
+            background: #16213e;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            text-align: center;
+            border: 1px solid #0f3460;
+        }
+        .controles {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-inicio { background-color: #e94560; color: white; }
+        .btn-parar { background-color: #0f3460; color: white; }
+        button:hover { opacity: 0.8; transform: translateY(-2px); }
+        #status { margin-top: 20px; color: #add8e6; }
+    </style>
+</head>
+<body>
+
+    <div class="panel">
+        <h2>Control de Alarma</h2>
+        <p>Presiona iniciar para activar la alerta de 5 segundos.</p>
+        
+        <div class="controles">
+            <button class="btn-inicio" onclick="iniciarTemporizador()">Iniciar Alarma</button>
+            <button class="btn-parar" onclick="detenerTemporizador()">Detener Alarma</button>
+        </div>
+
+        <p id="status">Estado: En espera...</p>
+    </div>
+
+    <script>
+        // Declaramos la variable fuera para que sea accesible por ambas funciones
+        var miAlarma;
+
+        function iniciarTemporizador() {
+            document.getElementById("status").innerHTML = "Estado: ⏳ Cuenta atrás iniciada (5s)...";
+            
+            // Guardamos el ID del timeout en la variable
+            miAlarma = setTimeout(function() {
+                alert("¡BOMBA ACTIVADA! (Es broma, solo pasaron 5 segundos) 🧨");
+                document.getElementById("status").innerHTML = "Estado: Alarma ejecutada.";
+            }, 5000);
+        }
+
+        function detenerTemporizador() {
+            // Usamos el ID guardado para cancelar la ejecución
+            clearTimeout(miAlarma);
+            
+            document.getElementById("status").innerHTML = "Estado: 🛑 Alarma detenida a tiempo.";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 7: Evento onClick</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #f0f4f7;
+            padding: 50px;
+        }
+        #visorImagenes {
+            margin: 20px auto;
+            width: 80%;
+            min-height: 200px;
+            background-color: #fff;
+            border: 2px dashed #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .foto-dinamica {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            animation: bounceIn 0.5s;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Galería Dinámica</h1>
+    <p>Haz clic en el botón para generar una nueva imagen en el contenedor inferior.</p>
+
+    <button onclick="añadirImagen()">¡Añadir Imagen!</button>
+
+    <div id="visorImagenes"></div>
+
+    <script>
+        function añadirImagen() {
+            // 1. Creamos el elemento imagen en memoria
+            var nuevaImg = document.createElement("img");
+
+            // 2. Le asignamos una fuente aleatoria para que sea divertido
+            // Usamos un ID aleatorio de Picsum para variar la imagen
+            var idAleatorio = Math.floor(Math.random() * 1000);
+            nuevaImg.src = "https://picsum.photos/id/" + idAleatorio + "/200/200";
+            
+            // 3. Le añadimos una clase CSS para el diseño y la animación
+            nuevaImg.className = "foto-dinamica";
+            nuevaImg.alt = "Imagen aleatoria";
+
+            // 4. Seleccionamos el destino y agregamos el "hijo"
+            var contenedor = document.getElementById("visorImagenes");
+            contenedor.appendChild(nuevaImg);
+        }
+    </script>
+
+</body>
+</html>

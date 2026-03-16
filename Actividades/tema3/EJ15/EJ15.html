@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Explorador de Propiedades del Documento</title>
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background-color: #1e1e1e; color: #d4d4d4; padding: 20px; }
+        .consola { background-color: #000; border: 1px solid #333; padding: 15px; border-radius: 5px; color: #9cdcfe; font-size: 0.9rem; margin-top: 20px; }
+        .web-demo { background: #fff; color: #333; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        button { background-color: #0e639c; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 3px; }
+        button:hover { background-color: #1177bb; }
+        h1 { color: #ce9178; }
+        a { color: #3794ff; }
+        .etiqueta { color: #569cd6; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="web-demo">
+        <h1>Mi Página de Prueba</h1>
+        <p>Esta es una página con algunos recursos:</p>
+        <a href="https://google.com">Enlace a Google</a> | 
+        <a href="https://w3schools.com">Enlace a W3Schools</a>
+        <br><br>
+        <img src="https://via.placeholder.com/50" alt="Logo 1">
+        <img src="https://via.placeholder.com/50" alt="Logo 2">
+    </div>
+
+    <button onclick="analizarDocumento()">Ejecutar análisis del Documento</button>
+
+    <div class="consola" id="consolaOutput">
+        > Haz clic en el botón para ver las propiedades de la página...
+    </div>
+
+    <script>
+        function analizarDocumento() {
+            // 1. Accedemos a las propiedades del objeto 'document'
+            var titulo = document.title;
+            var numImagenes = document.images.length;
+            var numEnlaces = document.links.length;
+
+            // 2. Preparamos el mensaje de salida
+            var resultado = "<strong>Analizando document...</strong><br><br>";
+            resultado += "<span class='etiqueta'>document.title:</span> '" + titulo + "'<br>";
+            resultado += "<span class='etiqueta'>document.images.length:</span> " + numImagenes + " imágenes encontradas.<br>";
+            resultado += "<span class='etiqueta'>document.links.length:</span> " + numEnlaces + " enlaces detectados.<br><br>";
+
+            // 3. Mostramos las URLs de los enlaces encontrados
+            resultado += "<strong>Listado de enlaces (URLs):</strong><br>";
+            for (var i = 0; i < document.links.length; i++) {
+                resultado += "- " + document.links[i].href + "<br>";
+            }
+
+            // 4. Inyectamos en nuestra "consola" visual
+            document.getElementById("consolaOutput").innerHTML = resultado;
+
+            // También lo enviamos a la consola real para cumplir con el enunciado
+            console.log("Título:", titulo);
+            console.log("Número de imágenes:", numImagenes);
+            console.log("Número de enlaces:", numEnlaces);
+        }
+    </script>
+
+</body>
+</html>

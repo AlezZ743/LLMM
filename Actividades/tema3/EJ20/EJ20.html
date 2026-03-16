@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafío Final: Lights Out</title>
+    <style>
+        :root {
+            --bg-color: #2c3e50;
+            --cell-off: #34495e;
+            --cell-on: #f1c40f;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 30px;
+        }
+        #tablero {
+            display: grid;
+            grid-template-columns: repeat(5, 60px);
+            grid-gap: 10px;
+            background: #1a252f;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .celda {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .celda.encendida { background-color: var(--cell-on); box-shadow: 0 0 15px var(--cell-on); }
+        .celda.apagada { background-color: var(--cell-off); }
+        .celda:active { transform: scale(0.9); }
+        
+        #mensaje { margin-top: 20px; font-weight: bold; height: 24px; color: #2ecc71; }
+        button { margin-top: 20px; padding: 10px 20px; cursor: pointer; border-radius: 5px; border: none; background: #e74c3c; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>Lights Out Game</h1>
+    <p>Apaga todas las luces para ganar.</p>
+
+    <div id="tablero"></div>
+    <div id="mensaje"></div>
+    <button onclick="crearTablero()">Reiniciar Juego</button>
+
+    <script>
+        const TAMANO = 5;
+        let tablero = [];
+
+        function crearTablero() {
+            const contenedor = document.getElementById('tablero');
+            contenedor.innerHTML = '';
+            document.getElementById('mensaje').innerHTML = '';
+            tablero = [];
+
+            for (let r = 0; r < TAMANO; r++) {
+                let fila = [];
+                for (let c = 0; c < TAMANO; c++) {
+                    // Crear el elemento en el DOM
+                    const div = document.createElement('div');
+                    div.id = `celda-${r}-${c}`;
+                    div.className = 'celda ' + (Math.random() > 0.7 ? 'encendida' : 'apagada');
+                    div.onclick = () => alternar(r, c);
+                    
+                    contenedor.appendChild(div);
+                    fila.push(div);
+                }
+                tablero.push(fila);
+            }
+        }
+
+        function alternar(r, c) {
+            // Cambiar la celda clicada y sus vecinas (Cruz)
+            cambiarEstado(r, c);     // Centro
+            cambiarEstado(r - 1, c); // Arriba
+            cambiarEstado(r + 1, c); // Abajo
+            cambiarEstado(r, c - 1); // Izquierda
+            cambiarEstado(r, c + 1); // Derecha
+            
+            verificarVictoria();
+        }
+
+        function cambiarEstado(r, c) {
+            if (r >= 0 && r < TAMANO && c >= 0 && c < TAMANO) {
+                const celda = tablero[r][c];
+                celda.classList.toggle('encendida');
+                celda.classList.toggle('apagada');
+            }
+        }
+
+        function verificarVictoria() {
+            const encendidas = document.getElementsByClassName('encendida');
+            if (encendidas.length === 0) {
+                document.getElementById('mensaje').innerHTML = "¡FELICIDADES! HAS GANADO 🏆";
+            }
+        }
+
+        // Iniciar al cargar
+        window.onload = crearTablero;
+    </script>
+</body>
+</html>

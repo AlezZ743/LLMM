@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso al DOM - Múltiples Párrafos</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .originales { background-color: #f9f9f9; padding: 10px; border-left: 5px solid #3498db; }
+        #contenedorDestino { 
+            margin-top: 20px; 
+            padding: 15px; 
+            background-color: #e8f8f5; 
+            border: 2px dashed #1abc9c; 
+            min-height: 50px;
+        }
+        button { 
+            padding: 10px 20px; 
+            background-color: #3498db; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px;
+        }
+        button:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+
+    <h2>1. Párrafos Originales</h2>
+    <div class="originales">
+        <p>Este es el <strong>primer</strong> párrafo de la lista.</p>
+        <p>Aquí tenemos el segundo párrafo con algo de información extra.</p>
+        <p>Y finalmente, el tercer párrafo que también queremos capturar.</p>
+    </div>
+
+    <br>
+    <button onclick="copiarParrafos()">Mostrar contenido en el DIV</button>
+
+    <h2>2. Contenido extraído (Destino)</h2>
+    <div id="contenedorDestino">
+        Aquí aparecerá la copia de los párrafos...
+    </div>
+
+    <script>
+        function copiarParrafos() {
+            // 1. Accedemos al DOM para obtener todos los párrafos
+            // Esto crea una "HTMLCollection" (parecido a un array)
+            var coleccionParrafos = document.getElementsByTagName("p");
+            
+            // 2. Variable para ir acumulando el texto
+            var textoAcumulado = "";
+
+            // 3. Recorremos la colección con un bucle for
+            for (var i = 0; i < coleccionParrafos.length; i++) {
+                // Sumamos el contenido de cada párrafo más un salto de línea
+                textoAcumulado += "<strong>Párrafo " + (i+1) + ":</strong> " + 
+                                  coleccionParrafos[i].innerHTML + "<br>";
+            }
+
+            // 4. Mostramos el resultado final en el div de destino
+            document.getElementById("contenedorDestino").innerHTML = textoAcumulado;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6: Evento onLoad</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0f7fa;
+        }
+        .mensaje-bienvenida {
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        #textoSaludo {
+            color: #00796b;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        // Esta es la función que saludará
+        function saludarAlCargar() {
+            var mensaje = "¡Hola! Bienvenido a mi página web. 😊";
+            
+            // Usamos innerHTML para mostrar el saludo
+            document.getElementById("textoSaludo").innerHTML = mensaje;
+            
+            // Opcional: Mostramos también una alerta clásica
+            console.log("La página se ha cargado completamente.");
+        }
+    </script>
+</head>
+
+<body onload="saludarAlCargar()">
+
+    <div class="mensaje-bienvenida">
+        <h2>Estado del Sistema:</h2>
+        <p id="textoSaludo">Esperando a que la página cargue...</p>
+    </div>
+
+</body>
+</html>
