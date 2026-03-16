@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de DOM con JavaScript</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 30px; background-color: #f4f4f9; color: #333; }
+        section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        button { padding: 10px 15px; margin-right: 10px; cursor: pointer; border: none; border-radius: 5px; background-color: #3498db; color: white; transition: 0.3s; }
+        button:hover { background-color: #2980b9; }
+        #miImagen { margin-top: 15px; border-radius: 8px; display: block; width: 300px; height: 200px; object-fit: cover; border: 3px solid #ddd; }
+        #miCajaMensaje { margin-top: 15px; padding: 15px; border: 2px dashed #bdc3c7; min-height: 50px; font-weight: bold; text-align: center; }
+        .texto-serif { font-family: 'Georgia', serif; }
+        .texto-mono { font-family: 'Courier New', monospace; font-weight: bold; }
+        .texto-fancy { font-family: 'Cursive', sans-serif; font-style: italic; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+    <h1>Panel de Control JavaScript</h1>
+
+    <section>
+        <h2>a. Estilo del Párrafo</h2>
+        <p id="parrafoPrincipal">Este es el texto que cambiará de fuente según el botón que presiones.</p>
+        <button onclick="cambiarFuente('serif')">Serif (Clásico)</button>
+        <button onclick="cambiarFuente('mono')">Monospace (Código)</button>
+        <button onclick="cambiarFuente('fancy')">Fancy (Cursiva)</button>
+    </section>
+
+    <section>
+        <h2>b. Atributo SRC de Imagen</h2>
+        <p>Selecciona una categoría de imagen:</p>
+        <button onclick="cambiarImagen('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300')">Gatos</button>
+        <button onclick="cambiarImagen('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300')">Perros</button>
+        <button onclick="cambiarImagen('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300')">Naturaleza</button>
+        <br>
+        <img id="miImagen" src='img/imagen.png' alt="Imagen dinámica">
+    </section>
+
+    <section>
+        <h2>c. Mensajes Dinámicos en DIV</h2>
+        <button onclick="mostrarMensaje('¡Hola! Has pulsado el primer botón.')">Mensaje 1</button>
+        <button onclick="mostrarMensaje('Este es un <strong>mensaje importante</strong> con HTML.')">Mensaje 2</button>
+        <button onclick="mostrarMensaje('Proceso finalizado con éxito. ✅')">Mensaje 3</button>
+        <div id="miCajaMensaje">Aquí aparecerá tu mensaje...</div>
+    </section>
+
+    <script>
+        // Lógica para la Sección A
+        function cambiarFuente(estilo) {
+            var p = document.getElementById("parrafoPrincipal");
+            // Limpiamos las clases previas y aplicamos la nueva
+            p.className = ""; 
+            if(estilo === 'serif') p.classList.add("texto-serif");
+            if(estilo === 'mono') p.classList.add("texto-mono");
+            if(estilo === 'fancy') p.classList.add("texto-fancy");
+        }
+
+        // Lógica para la Sección B
+        function cambiarImagen(nuevaUrl) {
+            // Asignamos el valor del parámetro directamente al atributo src
+            var img = document.getElementById("miImagen");
+            img.src = nuevaUrl;
+        }
+
+        // Lógica para la Sección C
+        function mostrarMensaje(texto) {
+            // Declaramos la variable, asignamos el valor y usamos innerHTML
+            var mensaje = texto;
+            document.getElementById("miCajaMensaje").innerHTML = mensaje;
+            
+            // Un toque extra de color al cambiar
+            document.getElementById("miCajaMensaje").style.backgroundColor = "#e8f6f3";
+        }
+    </script>
+
+</body>
+</html>

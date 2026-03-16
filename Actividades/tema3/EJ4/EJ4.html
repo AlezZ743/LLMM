@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Variables con innerHTML</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        .contenedor { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+        input { padding: 5px; margin-bottom: 10px; }
+        span { font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <h2>Manipulación de Variables en JavaScript</h2>
+
+    <div class="contenedor">
+        <h3>Ejemplo 1: Texto (Nombre de Coche)</h3>
+        <input type="text" id="inputCoche" placeholder="Escribe una marca..." oninput="actualizarTexto()">
+        <p>El coche seleccionado es: <span id="demoTexto">Ninguno</span></p>
+    </div>
+
+    <div class="contenedor">
+        <h3>Ejemplo 2: Números (Precio)</h3>
+        <input type="number" id="inputPrecio" placeholder="Introduce un precio..." oninput="actualizarNumero()">
+        <p>El valor total es: <span id="demoNumero">0</span> €</p>
+    </div>
+
+    <script>
+        // Función para manejar el texto
+        function actualizarTexto() {
+            // 1. Declaramos la variable y asignamos el valor desde el input
+            var nombreCoche = document.getElementById("inputCoche").value;
+            
+            // 2. Lo mostramos usando innerHTML
+            if (nombreCoche === "") {
+                document.getElementById("demoTexto").innerHTML = "Esperando entrada...";
+            } else {
+                document.getElementById("demoTexto").innerHTML = nombreCoche;
+            }
+        }
+
+        // Función para manejar los números
+        function actualizarNumero() {
+            // 1. Declaramos la variable y obtenemos el valor numérico
+            var precio = document.getElementById("inputPrecio").value;
+            
+            // 2. Lo mostramos usando innerHTML
+            document.getElementById("demoNumero").innerHTML = precio;
+        }
+    </script>
+
+</body>
+</html>
