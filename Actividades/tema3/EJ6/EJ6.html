@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Citas</title>
+    <style>
+        /* Estilos para imitar la imagen */
+        body {
+            background-color: #a89995; /* Fondo oscuro de la página */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .tarjeta {
+            background-color: #d7ccc8; /* Color crema de la tarjeta */
+            padding: 40px;
+            width: 500px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        #botonGenerar {
+            background-color: #64b5f6; /* Azul claro */
+            color: white;
+            border: 2px solid #333;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        #botonGenerar:hover {
+            background-color: #42a5f5;
+        }
+
+        .contenedor-cita {
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .comillas {
+            font-size: 80px;
+            color: #78909c;
+            line-height: 1;
+            margin-right: 15px;
+            user-select: none;
+        }
+
+        #textoCita {
+            font-size: 20px;
+            color: #546e7a;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+
+        #autorCita {
+            display: block;
+            text-align: right;
+            margin-top: 15px;
+            color: #4db6ac;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tarjeta">
+        <button id="botonGenerar" onclick="generarNuevaCita()">Generate Quote</button>
+
+        <div class="contenedor-cita">
+            <span class="comillas">“</span>
+            <div>
+                <p id="textoCita">Haz clic en el botón para ver una cita inspiradora.</p>
+                <span id="autorCita"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Declaramos nuestra "base de datos" de citas (un array de objetos)
+        var listaDeCitas = [
+            { 
+                texto: "Un crítico es alguien que nunca va a la batalla, pero que después sale a rematar a los heridos.", 
+                autor: "Tyne Daly" 
+            },
+            { 
+                texto: "La programación no es sobre lo que sabes; es sobre lo que puedes descifrar.", 
+                autor: "Chris Pine" 
+            },
+            { 
+                texto: "Si puedes imaginarlo, puedes programarlo.", 
+                autor: "Anónimo" 
+            },
+            { 
+                texto: "El código es como el humor. Cuando tienes que explicarlo, es malo.", 
+                autor: "Cory House" 
+            }
+        ];
+
+        function generarNuevaCita() {
+            // 2. Elegimos un número aleatorio entre 0 y el total de citas
+            var indiceAleatorio = Math.floor(Math.random() * listaDeCitas.length);
+            
+            // 3. Declaramos variables para la cita elegida
+            var citaSeleccionada = listaDeCitas[indiceAleatorio];
+            
+            // 4. Asignamos los valores al HTML usando innerHTML
+            document.getElementById("textoCita").innerHTML = citaSeleccionada.texto;
+            document.getElementById("autorCita").innerHTML = citaSeleccionada.autor;
+        }
+    </script>
+
+</body>
+</html>
