@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería Dinámica: Coches y Spiderman</title>
-    <link id="theme-stylesheet" rel="stylesheet" href="style1.css">
+    <link id="theme-stylesheet" rel="stylesheet" href="css/style1.css">
 </head>
 <body>
 
@@ -21,12 +21,13 @@
             <h2>Garaje de Coches</h2>
             <label for="car-select">Selecciona un coche:</label>
             <select id="car-select" onchange="updateImage('car-display', this.value)">
-                <option value="img/ImagesCars/coche1.jpg"></option>
-                <option value="img/ImagesCars/coche2.jpg"></option>
-                <option value="img/ImagesCars/coche3.jpg"></option>
-                <option value="img/ImagesCars/coche4.jpg"></option>
-                <option value="img/ImagesCars/coche5.jpg"></option>
-                <option value="img/ImagesCars/coche6.jpg"></option>
+                <option value="">-- Elige un coche --</option>
+                <option value="img/ImagesCars/coche1.jpg">Coche1</option>
+                <option value="img/ImagesCars/coche2.jpg">Coche2</option>
+                <option value="img/ImagesCars/coche3.jpg">Coche3</option>
+                <option value="img/ImagesCars/coche4.jpg">Coche4</option>
+                <option value="img/ImagesCars/coche5.jpg">Coche5</option>
+                <option value="img/ImagesCars/coche6.jpg">Coche6</option>
             </select>
             <div class="image-frame">
                 <img id="car-display" src="https://via.placeholder.com/500x300?text=Esperando+Coche..." alt="Imagen de coche">
@@ -37,14 +38,13 @@
             <h2>Universo Spiderman</h2>
             <label for="spiderman-select">Selecciona una imagen:</label>
             <select id="spiderman-select" onchange="updateImage('spidey-display', this.value)">
-            
-                <option value="img/ImagesSpiderman/spiderman1.jpg"></option>
-                <option value="img/ImagesSpiderman/spiderman2.jpg"></option>
-                <option value="img/ImagesSpiderman/spiderman3.jpg"></option>
-                <option value="img/ImagesSpiderman/spiderman4.jpg"></option>
-                <option value="img/ImagesSpiderman/spiderman5.jpg"></option>
-                <option value="img/ImagesSpiderman/spiderman6.jpg"></option>
-                
+                <option value="">-- Elige un Spidey --</option>
+                <option value="img/ImagesSpiderman/spiderman1.jpg">Spiderman1</option>
+                <option value="img/ImagesSpiderman/spiderman2.jpg">Spiderman2</option>
+                <option value="img/ImagesSpiderman/spiderman3.jpg">Spiderman3</option>
+                <option value="img/ImagesSpiderman/spiderman4.jpg">Spiderman4</option>
+                <option value="img/ImagesSpiderman/spiderman5.jpg">Spiderman5</option>
+                <option value="img/ImagesSpiderman/spiderman6.jpg">Spiderman6</option>
             </select>
             <div class="image-frame">
                 <img id="spidey-display" src="https://via.placeholder.com/500x300?text=Esperando+Héroe..." alt="Imagen de Spiderman">
@@ -53,12 +53,12 @@
     </main>
 
     <script>
-        // Función para cambiar la imagen según el select
         function updateImage(imgId, src) {
-            document.getElementById(imgId).src = src;
+            if(src !== "") {
+                document.getElementById(imgId).src = src;
+            }
         }
 
-        // Función para cambiar el archivo CSS
         function changeStyle(sheetName) {
             document.getElementById('theme-stylesheet').setAttribute('href', sheetName);
         }
