@@ -2,24 +2,37 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería Dinámica</title>
+    <title>Galería de Imágenes</title>
     <link id="theme-stylesheet" rel="stylesheet" href="css/style1.css">
+    
+    <script>
+        // Esta es tu función original, adaptada para ser usada en ambos grupos
+        function cambiaImagen(idElemento, nombreArchivo) {
+            document.getElementById(idElemento).src = nombreArchivo;   
+        }
+
+        // Función para cambiar los estilos CSS
+        function cambiaEstilo(archivoCss) {
+            document.getElementById('theme-stylesheet').href = archivoCss;
+        }
+    </script>
 </head>
 <body>
 
-    <header>
-        <h1>Galería de Imágenes</h1>
-        <div class="theme-switcher">
-            <button onclick="changeStyle('css/style1.css')">Estilo 1</button>
-            <button onclick="changeStyle('css/style2.css')">Estilo 2</button>
-        </div>
-    </header>
+    <h2>Galería de Imágenes</h2>
+    <p>Cambiamos las imágenes mediante el menú desplegable (select) y el estilo con los botones.</p>
+    
+    <button onclick="cambiaEstilo('css/style1.css')">Estilo 1</button>
+    <button onclick="cambiaEstilo('css/style2.css')">Estilo 2</button>
 
-    <main class="container">
-        <section class="gallery-section">
-            <h2>Coches</h2>
-            <select id="car-select" onchange="updateImage('car-display', this.value)">
+    <hr>
+
+    <div class="container">
+        <div class="gallery-section">
+            <h3>Coches</h3>
+            <img id="imgCoches" src="img/ImagesCars/coche1.jpg" style="height:300px"><br>
+            
+            <select onchange="cambiaImagen('imgCoches', this.value)">
                 <option value="img/ImagesCars/coche1.jpg">Coche 1</option>
                 <option value="img/ImagesCars/coche2.jpg">Coche 2</option>
                 <option value="img/ImagesCars/coche3.jpg">Coche 3</option>
@@ -27,34 +40,22 @@
                 <option value="img/ImagesCars/coche5.jpg">Coche 5</option>
                 <option value="img/ImagesCars/coche6.jpg">Coche 6</option>
             </select>
-            <div class="image-frame">
-                <img id="car-display" src="img/ImagesCars/coche1.jpg" alt="Coche">
-            </div>
-        </section>
+        </div>
 
-        <section class="gallery-section">
-            <h2>Spiderman</h2>
-            <select id="spiderman-select" onchange="updateImage('spidey-display', this.value)">
-                <option value="img/ImagesSpiderman/spiderman1.gif">Spiderman 1</option>
+        <div class="gallery-section">
+            <h3>Spiderman</h3>
+            <img id="imgSpiderman" src="img/ImagesSpiderman/spiderman1.jpg" style="height:300px"><br>
+            
+            <select onchange="cambiaImagen('imgSpiderman', this.value)">
+                <option value="img/ImagesSpiderman/spiderman1.jpg">Spiderman 1</option>
                 <option value="img/ImagesSpiderman/spiderman2.jpg">Spiderman 2</option>
                 <option value="img/ImagesSpiderman/spiderman3.jpg">Spiderman 3</option>
                 <option value="img/ImagesSpiderman/spiderman4.jpg">Spiderman 4</option>
                 <option value="img/ImagesSpiderman/spiderman5.jpg">Spiderman 5</option>
+                <option value="img/ImagesSpiderman/spiderman6.jpg">Spiderman 6</option>
             </select>
-            <div class="image-frame">
-                <img id="spidey-display" src="img/ImagesSpiderman/spiderman1.gif" alt="Spiderman">
-            </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
-    <script>
-        function updateImage(imgId, src) {
-            document.getElementById(imgId).src = src;
-        }
-
-        function changeStyle(sheetPath) {
-            document.getElementById('theme-stylesheet').setAttribute('href', sheetPath);
-        }
-    </script>
 </body>
 </html>
