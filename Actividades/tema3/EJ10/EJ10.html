@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Master en Funciones JS</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; padding: 20px; }
+        h1 { text-align: center; color: #1a73e8; }
+        .ejercicio { background: white; margin-bottom: 15px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h3 { margin-top: 0; color: #333; border-left: 4px solid #1a73e8; padding-left: 10px; }
+        input { padding: 8px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 15px; background-color: #1a73e8; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #1557b0; }
+        .resultado { font-weight: bold; color: #d93025; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Laboratorio de Lógica JavaScript</h1>
+
+    <div class="ejercicio">
+        <h3>A. El mayor de dos números</h3>
+        <input type="number" id="n1_a" placeholder="Número 1">
+        <input type="number" id="n2_a" placeholder="Número 2">
+        <button onclick="ejecutarMax()">Calcular Max</button>
+        <p id="res_a" class="resultado"></p>
+    </div>
+
+    <div class="ejercicio">
+        <h3>B. El mayor de tres números</h3>
+        <input type="number" id="n1_b" placeholder="N1">
+        <input type="number" id="n2_b" placeholder="N2">
+        <input type="number" id="n3_b" placeholder="N3">
+        <button onclick="ejecutarMaxOfThree()">Calcular MaxOfThree</button>
+        <p id="res_b" class="resultado"></p>
+    </div>
+
+    <div class="ejercicio">
+        <h3>C. ¿Es una vocal?</h3>
+        <input type="text" id="char_c" maxlength="1" placeholder="Ej: a">
+        <button onclick="ejecutarEsVocal()">Verificar</button>
+        <p id="res_c" class="resultado"></p>
+    </div>
+
+    <div class="ejercicio">
+        <h3>D. Traductor Rövarspråket</h3>
+        <input type="text" id="texto_d" placeholder="Escribe algo...">
+        <button onclick="ejecutarTranslate()">Traducir</button>
+        <p id="res_d" class="resultado"></p>
+    </div>
+
+    <div class="ejercicio">
+        <h3>E. Suma y Multiplica (Array)</h3>
+        <input type="text" id="array_e" placeholder="Ej: 1,2,3,4">
+        <button onclick="ejecutarSumMult()">Calcular</button>
+        <p id="res_e" class="resultado"></p>
+    </div>
+
+    <div class="ejercicio">
+        <h3>F. Invertir Cadena</h3>
+        <input type="text" id="texto_f" placeholder="Hola mundo">
+        <button onclick="ejecutarReverse()">Invertir</button>
+        <p id="res_f" class="resultado"></p>
+    </div>
+
+    <div class="ejercicio">
+        <h3>G. Ordenar Alfabéticamente</h3>
+        <input type="text" id="texto_g" placeholder="pera, manzana, kiwi">
+        <button onclick="ejecutarSort()">Ordenar</button>
+        <p id="res_g" class="resultado"></p>
+    </div>
+
+    <div class="ejercicio">
+        <h3>H. Longitud de la palabra más larga</h3>
+        <input type="text" id="texto_h" placeholder="Escribe varias palabras">
+        <button onclick="ejecutarLongest()">Calcular</button>
+        <p id="res_h" class="resultado"></p>
+    </div>
+
+    <div class="ejercicio">
+        <h3>I. Filtrar palabras largas</h3>
+        <input type="text" id="texto_i" placeholder="palabras, separadas, comas">
+        <input type="number" id="num_i" placeholder="Longitud i">
+        <button onclick="ejecutarFilter()">Filtrar</button>
+        <p id="res_i" class="resultado"></p>
+    </div>
+
+    <div class="ejercicio">
+        <h3>J. Frecuencia de Caracteres (Objeto)</h3>
+        <input type="text" id="texto_j" placeholder="abbabcbdbabdbdbabababcbcbab">
+        <button onclick="ejecutarCharFreq()">Analizar</button>
+        <p id="res_j" class="resultado"></p>
+    </div>
+
+    <script>
+        // --- LÓGICA DE LAS FUNCIONES ---
+
+        // A. max()
+        function max(a, b) {
+            if (a > b) return a;
+            else return b;
+        }
+        function ejecutarMax() {
+            let n1 = parseFloat(document.getElementById('n1_a').value);
+            let n2 = parseFloat(document.getElementById('n2_a').value);
+            document.getElementById('res_a').innerHTML = "El mayor es: " + max(n1, n2);
+        }
+
+        // B. maxOfThree()
+        function maxOfThree(a, b, c) {
+            return max(max(a, b), c);
+        }
+        function ejecutarMaxOfThree() {
+            let n1 = parseFloat(document.getElementById('n1_b').value);
+            let n2 = parseFloat(document.getElementById('n2_b').value);
+            let n3 = parseFloat(document.getElementById('n3_b').value);
+            document.getElementById('res_b').innerHTML = "El mayor es: " + maxOfThree(n1, n2, n3);
+        }
+
+        // C. isVowel()
+        function esVocal(c) {
+            return "aeiouAEIOU".indexOf(c) !== -1;
+        }
+        function ejecutarEsVocal() {
+            let char = document.getElementById('char_c').value;
+            document.getElementById('res_c').innerHTML = "¿Es vocal?: " + esVocal(char);
+        }
+
+        // D. translate() (Rövarspråket)
+        function translate(texto) {
+            let resultado = "";
+            for (let char of texto) {
+                if ("bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ".indexOf(char) !== -1) {
+                    resultado += char + "o" + char.toLowerCase();
+                } else {
+                    resultado += char;
+                }
+            }
+            return resultado;
+        }
+        function ejecutarTranslate() {
+            let t = document.getElementById('texto_d').value;
+            document.getElementById('res_d').innerHTML = translate(t);
+        }
+
+        // E. sum() y multiply()
+        function sum(arr) {
+            return arr.reduce((a, b) => a + b, 0);
+        }
+        function multiply(arr) {
+            return arr.reduce((a, b) => a * b, 1);
+        }
+        function ejecutarSumMult() {
+            let val = document.getElementById('array_e').value.split(',').map(Number);
+            document.getElementById('res_e').innerHTML = "Suma: " + sum(val) + " | Multiplicación: " + multiply(val);
+        }
+
+        // F. reverse()
+        function reverse(s) {
+            return s.split("").reverse().join("");
+        }
+        function ejecutarReverse() {
+            let t = document.getElementById('texto_f').value;
+            document.getElementById('res_f').innerHTML = reverse(t);
+        }
+
+        // G. sort()
+        function ejecutarSort() {
+            let arr = document.getElementById('texto_g').value.split(',').map(s => s.trim());
+            document.getElementById('res_g').innerHTML = "Ordenado: " + arr.sort().join(', ');
+        }
+
+        // H. findLongestWord()
+        function findLongestWord(arr) {
+            return Math.max(...arr.map(w => w.length));
+        }
+        function ejecutarLongest() {
+            let arr = document.getElementById('texto_h').value.split(/\s+/);
+            document.getElementById('res_h').innerHTML = "La más larga mide: " + findLongestWord(arr);
+        }
+
+        // I. filterLongWords()
+        function filterLongWords(arr, i) {
+            return arr.filter(w => w.length > i);
+        }
+        function ejecutarFilter() {
+            let arr = document.getElementById('texto_i').value.split(',').map(s => s.trim());
+            let i = parseInt(document.getElementById('num_i').value);
+            document.getElementById('res_i').innerHTML = "Resultados: " + filterLongWords(arr, i).join(', ');
+        }
+
+        // J. charFreq()
+        function charFreq(string) {
+            let freq = {};
+            for (let char of string) {
+                freq[char] = (freq[char] || 0) + 1;
+            }
+            return freq;
+        }
+        function ejecutarCharFreq() {
+            let t = document.getElementById('texto_j').value;
+            let res = charFreq(t);
+            document.getElementById('res_j').innerHTML = JSON.stringify(res);
+        }
+    </script>
+</body>
+</html>
