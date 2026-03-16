@@ -3,63 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería Dinámica: Coches y Spiderman</title>
+    <title>Galería Dinámica</title>
     <link id="theme-stylesheet" rel="stylesheet" href="css/style1.css">
 </head>
 <body>
 
     <header>
-        <h1>Mi Galería Interactiva</h1>
+        <h1>Galería de Imágenes</h1>
         <div class="theme-switcher">
-            <button onclick="changeStyle('css/style1.css')">Estilo Moderno</button>
-            <button onclick="changeStyle('css/style2.css')">Estilo Retro</button>
+            <button onclick="changeStyle('css/style1.css')">Estilo 1</button>
+            <button onclick="changeStyle('css/style2.css')">Estilo 2</button>
         </div>
     </header>
 
     <main class="container">
         <section class="gallery-section">
-            <h2>Garaje de Coches</h2>
-            <label for="car-select">Selecciona un coche:</label>
+            <h2>Coches</h2>
             <select id="car-select" onchange="updateImage('car-display', this.value)">
-                <option value="">-- Elige un coche --</option>
-                <option value="img/ImagesCars/coche1.jpg">Coche1</option>
-                <option value="img/ImagesCars/coche2.jpg">Coche2</option>
-                <option value="img/ImagesCars/coche3.jpg">Coche3</option>
-                <option value="img/ImagesCars/coche4.jpg">Coche4</option>
-                <option value="img/ImagesCars/coche5.jpg">Coche5</option>
-                <option value="img/ImagesCars/coche6.jpg">Coche6</option>
+                <option value="img/ImagesCars/coche1.jpg">Coche 1</option>
+                <option value="img/ImagesCars/coche2.jpg">Coche 2</option>
+                <option value="img/ImagesCars/coche3.jpg">Coche 3</option>
+                <option value="img/ImagesCars/coche4.jpg">Coche 4</option>
+                <option value="img/ImagesCars/coche5.jpg">Coche 5</option>
+                <option value="img/ImagesCars/coche6.jpg">Coche 6</option>
             </select>
             <div class="image-frame">
-                <img id="car-display" src="https://via.placeholder.com/500x300?text=Esperando+Coche..." alt="Imagen de coche">
+                <img id="car-display" src="img/ImagesCars/coche1.jpg" alt="Coche">
             </div>
         </section>
 
         <section class="gallery-section">
-            <h2>Universo Spiderman</h2>
-            <label for="spiderman-select">Selecciona una imagen:</label>
+            <h2>Spiderman</h2>
             <select id="spiderman-select" onchange="updateImage('spidey-display', this.value)">
-                <option value="">-- Elige un Spidey --</option>
-                <option value="img/ImagesSpiderman/spiderman1.jpg">Spiderman1</option>
-                <option value="img/ImagesSpiderman/spiderman2.jpg">Spiderman2</option>
-                <option value="img/ImagesSpiderman/spiderman3.jpg">Spiderman3</option>
-                <option value="img/ImagesSpiderman/spiderman4.jpg">Spiderman4</option>
-                <option value="img/ImagesSpiderman/spiderman5.jpg">Spiderman5</option>
+                <option value="img/ImagesSpiderman/spiderman1.jpg">Spiderman 1</option>
+                <option value="img/ImagesSpiderman/spiderman2.jpg">Spiderman 2</option>
+                <option value="img/ImagesSpiderman/spiderman3.jpg">Spiderman 3</option>
+                <option value="img/ImagesSpiderman/spiderman4.jpg">Spiderman 4</option>
+                <option value="img/ImagesSpiderman/spiderman5.jpg">Spiderman 5</option>
+                <option value="img/ImagesSpiderman/spiderman6.jpg">Spiderman 6</option>
             </select>
             <div class="image-frame">
-                <img id="spidey-display" src="https://via.placeholder.com/500x300?text=Esperando+Héroe..." alt="Imagen de Spiderman">
+                <img id="spidey-display" src="img/ImagesSpiderman/spiderman1.jpg" alt="Spiderman">
             </div>
         </section>
     </main>
 
     <script>
         function updateImage(imgId, src) {
-            if(src !== "") {
-                document.getElementById(imgId).src = src;
-            }
+            document.getElementById(imgId).src = src;
         }
 
-        function changeStyle(sheetName) {
-            document.getElementById('theme-stylesheet').setAttribute('href', sheetName);
+        function changeStyle(sheetPath) {
+            document.getElementById('theme-stylesheet').setAttribute('href', sheetPath);
         }
     </script>
 </body>
