@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_Standard_Exercise>
+    
+    <Question ID="a">
+        <Title>What do comments look like in XML?</Title>
+        <Answer>
+            Comments in XML begin with &lt;!-- and end with --&gt;. 
+            For example: &lt;!-- This is a comment --&gt;.
+        </Answer>
+        <Constraint>
+            The string "--" (double-hyphen) must not occur within comments.
+        </Constraint>
+    </Question>
+
+    <Question ID="b">
+        <Title>Can an attribute be repeated in the same element?</Title>
+        <Answer>No.</Answer>
+        <OfficialRule>
+            An attribute name must not appear more than once in the same 
+            start-tag or empty-element tag.
+        </OfficialRule>
+    </Question>
+
+    <Question ID="c">
+        <Title>Where is it stated that tag names must match?</Title>
+        <Section>Section 3.1</Section>
+        <Description>
+            The W3C recommendation states that the Name in the end-tag 
+            must match that in the start-tag. XML is case-sensitive, 
+            meaning "Tag" and "tag" are different.
+        </Description>
+    </Question>
+
+</XML_Standard_Exercise>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letter>
+  <Sender>
+    <Name>Juan Pérez</Name>
+    <Address>Calle Falsa 123</Address>
+    <City>Madrid</City>
+    <PostalCode>28001</PostalCode>
+  </Sender>
+
+  <Receiver>
+    <Name>María García</Name>
+    <Company>Tech Solutions S.A.</Company>
+    <Address>Avenida de la Constitución 45</Address>
+    <City>Barcelona</City>
+  </Receiver>
+
+  <Date>2026-03-18</Date>
+  
+  <Subject>Propuesta de colaboración profesional</Subject>
+
+  <Body>
+    <Salutation>Estimada María:</Salutation>
+    <Paragraph>
+      Le escribo para expresarle mi interés en colaborar con su empresa en el 
+      próximo proyecto de desarrollo de software. He seguido su trayectoria 
+      y creo que mis habilidades en XML y bases de datos podrían ser de gran valor.
+    </Paragraph>
+    <Paragraph>
+      Quedo a su disposición para concertar una entrevista y discutir los detalles.
+    </Paragraph>
+    <Closing>Atentamente,</Closing>
+  </Body>
+
+  <Signature>Juan Pérez</Signature>
+</Letter>
