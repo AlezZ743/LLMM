@@ -1,0 +1,13 @@
+1. Errores de sintaxis (Documento no "Bien Formado")
+
+
+- Etiquetas mal cerradas/solapadas: En las líneas de president y secretary, las etiquetas están cruzadas. Ejemplo: <extension>.../president></extension>. El orden correcto debe ser el inverso al de apertura: si abres A y luego B, debes cerrar B y luego A.
+
+- Cierre de etiquetas inexistentes: Hay etiquetas de cierre como </secretary> y </president> que aparecen después de que ya se ha intentado cerrar otra etiqueta, creando un caos jerárquico.
+
+2. Errores de Estructura (Jerarquía)
+
+
+- Elementos huérfanos: Los elementos president y secretary están sueltos dentro de phonebook. Deberían estar dentro de cada etiqueta <company> correspondiente para saber a qué empresa pertenecen.
+
+- Contenido mezclado: Hay texto (como "Bill Gates" o "Katharine Finch") que está fuera de etiquetas específicas, lo que dificulta extraer la información de forma automatizada.

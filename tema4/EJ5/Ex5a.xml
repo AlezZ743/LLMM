@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CDList>
+    <CD>
+        <album_name>Abbey Road</album_name>
+        <artist>The Beatles</artist>
+        <year>1969</year>
+        <category>Rock</category>
+        <tracks>
+            <track>
+                <number>1</number>
+                <title>Come Together</title>
+                <duration>4:19</duration>
+            </track>
+            <track>
+                <number>2</number>
+                <title>Something</title>
+                <duration>3:02</duration>
+            </track>
+        </tracks>
+    </CD>
+</CDList>

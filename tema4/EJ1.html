@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Respuestas Ejercicios XML</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background-color: #f0f2f5; color: #333; padding: 40px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; }
+        .exercise { margin-bottom: 30px; padding: 20px; border-left: 5px solid #1a73e8; background: #fafafa; }
+        .question { font-weight: bold; font-size: 1.1em; margin-bottom: 10px; display: block; }
+        pre { background: #282c34; color: #abb2bf; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 0.95em; }
+        .note { font-size: 0.9em; color: #666; font-style: italic; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Soluciones a Ejercicios XML</h1>
+
+    <div class="exercise">
+        <span class="question">a. Elemento con nombre "test_element" y contenido:</span>
+        <pre><test_element>This is our first element!</test_element></pre>
+        <p class="note">Nota: En XML los nombres no pueden tener espacios, por eso usamos el guion bajo.</p>
+    </div>
+
+    <div class="exercise">
+        <span class="question">b. Jerarquía del elemento "book":</span>
+                <pre>
+<book>
+    <chapters>Contenido de los capítulos</chapters>
+    <author>
+        <name>Nombre del autor</name>
+        <address>Dirección del autor</address>
+    </author>
+</book></pre>
+    </div>
+
+    <div class="exercise">
+        <span class="question">c. Elemento "entry" con atributos "no" y "date":</span>
+        <pre><entry no="24" date="27.10.2004" /></pre>
+        <p class="note">Nota: Los atributos siempre van dentro de la etiqueta de apertura y sus valores entre comillas.</p>
+    </div>
+</div>
+
+</body>
+</html>
