@@ -36,5 +36,23 @@ Este repositorio incluye actividades llevadas a cabo en el módulo Lenguaje de M
 | [EJERCICIO 19](Actividades/tema3/EJ19/EJ19.html) | |
 | [EJERCICIO 20](Actividades/tema3/EJ20/EJ20.html) | |
 
+| [TEMA 4]|||
+|[XML]|||
+|[EJERCICIO 1](Actividades/tema4/EJ1.html)|||
+|[EJERCICIO 2](Actividades/tema4/EJ2/Ex2.xml)|||
+|[EJERCICIO 3](Actividades/tema4/EJ3/ex3-err.txt)|||
+|[EJERCICIO 4](Actividades/tema4/EJ4/Ex4.xml)|||
+|[EJERCICIO 5 A](Actividades/tema4/EJ5/Ex5a.xml)|||
+|[EJERCICIO 5 B](Actividades/tema4/EJ5/Ex5b.xml)|||
+|[EJERCICIO 6](Actividades/tema4/EJ6/Ex6.xml)|||
+|[EJERCICIO 7](Actividades/tema4/EJ7/Ex7.xml)|||
+|[EJERCICIO 8 - 1](Actividades/tema4/EJ8/Ex8_1.xml)|||
+|[EJERCICIO 8 - 2](Actividades/tema4/EJ8/Ex8_2.xml)|||
+|[EJERCICIO 8 - 3](Actividades/tema4/EJ8/Ex8_3.xml)|||
+|[EJERCICIO 8 - 4](Actividades/tema4/EJ8/Ex8_4.xml)|||
+|[EJERCICIO 8 - 5](Actividades/tema4/EJ8/Ex8_5.xml)|||
+|[EJERCICIO 8 - 6](Actividades/tema4/EJ8/Ex8_6.xml)|||
+|[EJERCICIO 8 - 7](Actividades/tema4/EJ8/Ex8_7.xml)|||
+
 
 
