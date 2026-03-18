@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml_learning_project>
+
+  <exercise_5_cd_list>
+    <CDList>
+      <CD serial="B6B41B" disc-length="36:55">
+        <record_name>Discovery</record_name>
+        <artist>Daft Punk</artist>
+        <year>2001</year>
+        <category>Electronic</category>
+        <tracks>
+          <track number="1">
+            <title>One More Time</title>
+            <duration>5:20</duration>
+          </track>
+          <track number="2">
+            <title>Aerodynamic</title>
+            <duration>3:27</duration>
+          </track>
+        </tracks>
+      </CD>
+    </CDList>
+  </exercise_5_cd_list>
+
+  <exercise_6_letter>
+    <letter>
+      <sender>
+        <name>Juan Pérez</name>
+        <address>Calle Falsa 123, Madrid</address>
+      </sender>
+      <receiver>
+        <name>María García</name>
+        <address>Avenida Libertad 45, Barcelona</address>
+      </receiver>
+      <date>2026-03-18</date>
+      <body>
+        <salutation>Estimada María:</salutation>
+        <content>Te envío los ejercicios de XML corregidos para la práctica.</content>
+        <closing>Atentamente,</closing>
+      </body>
+      <signature>Juan Pérez</signature>
+    </letter>
+  </seccion_6>
+
+  <exercise_7_theory>
+    <question id="a">
+      <title>XML Comments</title>
+      <answer>Comments start with &lt;!-- and end with --&gt;</answer>
+    </question>
+    <question id="b">
+      <title>Repeated Attributes</title>
+      <answer>No. An attribute name cannot appear more than once in the same tag.</answer>
+    </question>
+    <question id="c">
+      <title>Matching Tags</title>
+      <answer>Stated in Section 3.1: opening and closing names must be identical.</answer>
+    </question>
+  </exercise_7_theory>
+
+  <corrected_wfd_exercises>
+    <deportistas>
+      <deportista>
+        <deporte>Atletismo</deporte>
+        <nombre>Jesse Owens</nombre>
+      </deportista>
+    </deportistas>
+
+    <mundiales-de-futbol>
+      <mundial>
+        <pais_sede>España</pais_sede>
+        <year>1982</year>
+      </mundial>
+    </mundiales-de-futbol>
+
+    <mediosDeTransporte>
+      <bicicleta velocidad="v &lt; 100km/h" />
+      <patinete velocidad_maxima="50 km/h" />
+    </mediosDeTransporte>
+  </corrected_wfd_exercises>
+
+  <javascript_dom_reference>
+    <code_snippet id="books_titles">
+      // Todos los títulos:
+      let n = document.getElementsByTagName("title").length;
+      for(let i=0; i&lt;n; i++) { 
+        console.log(document.getElementsByTagName("title")[i].childNodes[0].nodeValue); 
+      }
+    </code_snippet>
+    <code_snippet id="book_attributes">
+      // Atributos del 4º libro:
+      let attrs = document.getElementsByTagName("book")[3].attributes.length;
+    </code_snippet>
+  </javascript_dom_reference>
+
+</xml_learning_project>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cuaderno_practicas_xml>
+
+  <seccion id="5" titulo="CD Information">
+    <CDList>
+      <CD serial="B6B41B" disc-length="36:55">
+        <name>Discovery</name>
+        <artist>Daft Punk</artist>
+        <year>2001</year>
+        <category>Electronic</category>
+        <songs>
+          <track>
+            <number>1</number>
+            <title>One More Time</title>
+            <duration>5:20</duration>
+          </track>
+          <track>
+            <number>2</number>
+            <title>Aerodynamic</title>
+            <duration>3:27</duration>
+          </track>
+        </songs>
+      </CD>
+    </CDList>
+  </seccion>
+
+  <seccion id="6" titulo="Letter Template">
+    <letter>
+      <sender>
+        <name>Juan Pérez</name>
+        <address>Calle Falsa 123</address>
+        <city>Madrid</city>
+      </sender>
+      <receiver>
+        <name>María García</name>
+        <company>Tech Solutions</company>
+        <city>Barcelona</city>
+      </receiver>
+      <date>2026-03-18</date>
+      <subject>Propuesta de Colaboración</subject>
+      <body>
+        <salutation>Estimada María:</salutation>
+        <text>Adjunto envío la información solicitada sobre XML.</text>
+        <closing>Atentamente,</closing>
+      </body>
+      <signature>Juan Pérez</signature>
+    </letter>
+  </seccion>
+
+  <seccion id="7" titulo="The XML Standard">
+    <theory_answers>
+      <question id="a">
+        <text>What do comments look like?</text>
+        <answer>They look like &lt;!-- comment --&gt;</answer>
+      </question>
+      <question id="b">
+        <text>Can an attribute be repeated?</text>
+        <answer>No, section 3.1 states it must not appear more than once.</answer>
+      </question>
+      <question id="c">
+        <text>Tag matching rule location?</text>
+        <answer>Stated in Section 3.1: Start-tags and End-tags must match.</answer>
+      </question>
+    </theory_answers>
+  </seccion>
+
+  <seccion id="WFD" titulo="Corrected Well-Formed Documents">
+    <deportistas>
+      <deportista>
+        <deporte>Atletismo</deporte>
+        <nombre>Jesse Owens</nombre>
+      </deportista>
+    </deportistas>
+
+    <geografia_mundial>
+      <pais>
+        <nombre_pais>España</nombre_pais>
+        <capital nombre="Madrid" />
+      </pais>
+    </geografia_mundial>
+
+    <mediosDeTransporte>
+      <bicicleta velocidad="v &lt; 100km/h" />
+      <patinete velocidad_maxima="50 km/h" />
+    </mediosDeTransporte>
+  </seccion>
+
+  <seccion id="DOM_JS" titulo="JavaScript DOM Queries">
+    <query id="titles">titulos += document.getElementsByTagName("TITLE")[i].childNodes[0].nodeValue;</query>
+    <query id="prices">precios += document.getElementsByTagName("PRICE")[i].childNodes[0].nodeValue;</query>
+    <query id="company">companias += document.getElementsByTagName("COMPANY")[i].childNodes[0].nodeValue;</query>
+  </seccion>
+
+</cuaderno_practicas_xml>

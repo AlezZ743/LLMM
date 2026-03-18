@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* Styling the div-based table */
+  .divTable { display: table; width: 100%; border-collapse: collapse; }
+  .divTableRow { display: table-row; }
+  .divTableHeading { display: table-header-group; background-color: #eee; font-weight: bold; }
+  .divTableCell, .divTableHead { display: table-cell; border: 1px solid #999999; padding: 5px 10px; }
+  .divTableBody { display: table-row-group; }
+</style>
+</head>
+<body>
+
+<h2>CD Catalog (AJAX Div Table)</h2>
+<button type="button" onclick="loadDoc()">Get CD Collection</button>
+<br><br>
+
+<div id="demo" class="divTable">
+  </div>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    myFunction(this);
+  }
+  xhttp.open("GET", "cd_catalog.xml");
+  xhttp.send();
+}
+
+function myFunction(xml) {
+  const xmlDoc = xml.responseXML;
+  const cds = xmlDoc.getElementsByTagName("CD");
+  
+  // Create Header Row
+  let divContent = `
+    <div class="divTableHeading">
+      <div class="divTableRow">
+        <div class="divTableHead">Country</div>
+        <div class="divTableHead">Company</div>
+        <div class="divTableHead">Price</div>
+        <div class="divTableHead">Year</div>
+      </div>
+    </div>
+    <div class="divTableBody">`;
+
+  // Loop through each CD and extract requested fields
+  for (let i = 0; i < cds.length; i++) {
+    divContent += "<div class='divTableRow'>" +
+      "<div class='divTableCell'>" + cds[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue + "</div>" +
+      "<div class='divTableCell'>" + cds[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue + "</div>" +
+      "<div class='divTableCell'>" + cds[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue + "</div>" +
+      "<div class='divTableCell'>" + cds[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue + "</div>" +
+      "</div>";
+  }
+
+  divContent += "</div>"; // Close divTableBody
+  document.getElementById("demo").innerHTML = divContent;
+}
+</script>
+
+</body>
+</html>

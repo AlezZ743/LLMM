@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+/*Ejercicio 2 - Año del primer libro*/
+
+document.getElementsByTagName("year")[0].childNodes[0].nodeValue;
+
+
+/*Ejercicio 3 - Precio del segundo libro*/
+
+document.getElementsByTagName("book")[1].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+
+
+/*Ejercicio 5 - Primer autor del tercer libro*/
+
+document.getElementsByTagName("book")[2].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+
+
+/*Ejercicio 6 - Segundo autor del tercer libro*/
+
+document.getElementsByTagName("book")[2].getElementsByTagName("author")[1].childNodes[0].nodeValue;
+
+
+/*Ejercicio 11 - Mostrar el número de atributos del cuarto libro*/
+
+document.getElementsByTagName("book")[3].attributes.length;
+
+
+/*Ejercicio 12 - Mostrar el valor de los atributos del cuarto libro*/
+
+let listaAtributos = document.getElementsByTagName("book")[3].attributes;
+for (let i = 0; i < listaAtributos.length; i++) {
+    console.log(listaAtributos[i].nodeValue);
+}

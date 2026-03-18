@@ -1,0 +1,5 @@
+precios = "";
+n = document.getElementsByTagName("PRICE").length;
+for (i = 0; i < n; i++) {
+    precios += document.getElementsByTagName("PRICE")[i].childNodes[0].nodeValue + "€<br>";
+}

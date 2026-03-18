@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Información Meteorológica - Huelva</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; }
+        .data-section { border-bottom: 1px solid #ddd; padding: 10px 0; }
+        .label { font-weight: bold; color: #34495e; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #3498db; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="municipio">Cargando datos...</h1>
+    
+    <div class="data-section">
+        <p><span class="label">Temperatura Máxima:</span> <span id="temp-max">--</span>°C</p>
+        <p><span class="label">Temperatura Mínima:</span> <span id="temp-min">--</span>°C</p>
+    </div>
+
+    <h3>Pronóstico por tramos horarios (Hoy)</h3>
+    <table id="tabla-horaria">
+        <thead>
+            <tr>
+                <th>Tramo</th>
+                <th>Estado del Cielo</th>
+                <th>Viento (Dir/Vel)</th>
+                <th>Humedad Relativa</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+</div>
+
+<script>
+    // URL de Huelva capital según el ejercicio
+    const url = "https://www.aemet.es/xml/municipios/localidad_21041.xml";
+
+    async function cargarMeteorologia() {
+        try {
+            const response = await fetch(url);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, "application/xml");
+
+            // 1. Nombre del municipio
+            document.getElementById('municipio').innerText = "Clima en: " + xml.getElementsByTagName("nombre")[0].textContent;
+
+            // 2. Temperaturas (del primer día disponible)
+            const hoy = xml.getElementsByTagName("prediccion")[0].getElementsByTagName("dia")[0];
+            const tMax = hoy.getElementsByTagName("temperatura")[0].getElementsByTagName("maxima")[0].textContent;
+            const tMin = hoy.getElementsByTagName("temperatura")[0].getElementsByTagName("minima")[0].textContent;
+            
+            document.getElementById('temp-max').innerText = tMax;
+            document.getElementById('temp-min').innerText = tMin;
+
+            // 3. Datos por tramos horarios (Estado cielo, Viento, Humedad)
+            const estadoCielo = hoy.getElementsByTagName("estado_cielo");
+            const viento = hoy.getElementsByTagName("viento");
+            const humedad = hoy.getElementsByTagName("humedad_relativa");
+            const tbody = document.querySelector("#tabla-horaria tbody");
+
+            tbody.innerHTML = ""; // Limpiar tabla
+
+            // Usamos los tramos de 'estado_cielo' como base (00-06, 06-12, etc.)
+            for (let i = 0; i < estadoCielo.length; i++) {
+                let periodo = estadoCielo[i].getAttribute("periodo");
+                if (!periodo) continue; // Saltar si no tiene periodo
+
+                let descripcionCielo = estadoCielo[i].getAttribute("descripcion") || "N/A";
+                
+                // Buscar datos de viento para el mismo periodo
+                let v = Array.from(viento).find(node => node.getAttribute("periodo") === periodo);
+                let infoViento = v ? `${v.getElementsByTagName("direccion")[0].textContent} a ${v.getElementsByTagName("velocidad")[0].textContent} km/h` : "--";
+
+                // Buscar humedad para el mismo periodo
+                let h = Array.from(humedad).find(node => node.getAttribute("periodo") === periodo);
+                let infoHumedad = h ? h.textContent + "%" : "--";
+
+                // Insertar fila en la tabla
+                let fila = `<tr>
+                    <td>${periodo}h</td>
+                    <td>${descripcionCielo}</td>
+                    <td>${infoViento}</td>
+                    <td>${infoHumedad}</td>
+                </tr>`;
+                tbody.innerHTML += fila;
+            }
+
+        } catch (error) {
+            console.error("Error al cargar el XML:", error);
+            document.getElementById('municipio').innerText = "Error al cargar los datos.";
+        }
+    }
+
+    cargarMeteorologia();
+</script>
+
+</body>
+</html>
