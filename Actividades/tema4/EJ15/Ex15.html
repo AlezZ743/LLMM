@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Acceso a datos del objeto</h2>
+<p id="demo"></p>
+
+<script>
+const myObj = {
+  "name": "John",
+  "age": 30,
+  "cars": ["Ford", "BMW", "Fiat"]
+};
+
+// Acceso al nombre y a los elementos del array
+document.getElementById("demo").innerHTML = 
+  "Nombre: " + myObj.name + "<br>" +
+  "Coche 1: " + myObj.cars[0] + "<br>" +
+  "Coche 2: " + myObj.cars[1] + "<br>" +
+  "Coche 3: " + myObj.cars[2];
+</script>
+
+</body>
+</html>

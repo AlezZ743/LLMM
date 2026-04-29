@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JSON Array Demo</h2>
+<p id="longitud"></p>
+<div id="tabla_contenedor"></div>
+
+<script>
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const myArr = JSON.parse(this.responseText);
+  
+  // 1. Muestra la longitud del array
+  document.getElementById("longitud").innerHTML = "Longitud del array: " + myArr.length;
+  
+  // 2. Muestra los elementos usando una tabla
+  let table = "<table border='1'>";
+  for (let x in myArr) {
+    table += "<tr><td>" + myArr[x] + "</td></tr>";
+  }
+  table += "</table>";
+  document.getElementById("tabla_contenedor").innerHTML = table;
+}
+xmlhttp.open("GET", "json_demo_array.txt");
+xmlhttp.send();
+</script>
+
+</body>
+</html>

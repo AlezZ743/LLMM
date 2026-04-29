@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ejercicio JSON Pets</h2>
+<p id="demo"></p>
+
+<script>
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+  let txt = "";
+
+  // 1. Muestra edad
+  txt += "Edad: " + myObj.age + "<br>";
+
+  // 2. Muestra del primer elemento pets, el tipo de animal
+  txt += "Tipo mascota 1: " + myObj.pets[0].type + "<br>";
+
+  // 3. Muestra del primer elemento pets, el nombre
+  txt += "Nombre mascota 1: " + myObj.pets[0].name + "<br>";
+
+  // 4. Muestra el número de mascotas (pets)
+  txt += "Número de mascotas: " + myObj.pets.length + "<br>";
+
+  // 5. Muestra el nombre de todas las mascotas (bucle for)
+  txt += "<b>Lista de nombres:</b><br>";
+  for(let i = 0; i < myObj.pets.length; i++) {
+    txt += myObj.pets[i].name + "<br>";
+  }
+
+  // 6. Muestra todos los datos en un párrafo
+  txt += "<p>Resumen: " + myObj.name + " tiene " + myObj.age + " años.</p>";
+
+  // 7. Muestra los datos usando una tabla (bucle for...of)
+  txt += "<table border='1'><tr><th>Nombre</th><th>Tipo</th></tr>";
+  for(let pet of myObj.pets) {
+    txt += "<tr><td>" + pet.name + "</td><td>" + pet.type + "</td></tr>";
+  }
+  txt += "</table>";
+
+  document.getElementById("demo").innerHTML = txt;
+}
+// Asegúrate de que el archivo JSON tenga la estructura de "pets"
+xmlhttp.open("GET", "json_demo.txt"); 
+xmlhttp.send();
+</script>
+
+</body>
+</html>
