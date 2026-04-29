@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE modulos SYSTEM "modulos.dtd">
+<modulos>
+  <modulo>
+    <nombre>Sostenibilidad Aplicada al Sistema Productivo</nombre>
+    <descripcion>Análisis de retos ambientales, sociales y económicos en la producción, integrando prácticas sostenibles en el desarrollo de software.</descripcion>
+    <codigo>0612</codigo>
+    <profesor>Rosa María Palanco Cruzado</profesor>
+    <fechas>
+      <inicio>
+        <dia>15</dia>
+        <mes>09</mes>
+        <año>2025</año>
+      </inicio>
+      <fin>
+        <dia>22</dia>
+        <mes>06</mes>
+        <año>2026</año>
+      </fin>
+    </fechas>
+  </modulo>
+
+  <modulo>
+    <nombre>Base de Datos</nombre>
+    <descripcion>Diseño, implementación y gestión de bases de datos relacionales utilizando lenguajes de consulta como SQL.</descripcion>
+    <codigo>0613</codigo>
+    <profesor>Eduardo del Cerro Aldea</profesor>
+    <fechas>
+      <inicio>
+        <dia>15</dia>
+        <mes>09</mes>
+        <año>2025</año>
+      </inicio>
+      <fin>
+        <dia>22</dia>
+        <mes>06</mes>
+        <año>2026</año>
+      </fin>
+    </fechas>
+  </modulo>
+
+    <modulo>
+    <nombre>Entornos de Desarrollo</nombre>
+    <descripcion>Configuración de herramientas de programación, control de versiones (Git), pruebas unitarias y depuración de código</descripcion>
+    <codigo>0614</codigo>
+    <profesor>Juan Manuel Gallego Díaz</profesor>
+    <fechas>
+      <inicio>
+        <dia>15</dia>
+        <mes>09</mes>
+        <año>2025</año>
+      </inicio>
+      <fin>
+        <dia>22</dia>
+        <mes>06</mes>
+        <año>2026</año>
+      </fin>
+    </fechas>
+  </modulo>
+
+    <modulo>
+    <nombre>Itinerario Personal para la Empleabilidad I</nombre>
+    <descripcion>Orientación laboral, derechos de los trabajadores, prevención de riesgos laborales y búsqueda activa de empleo.</descripcion>
+    <codigo>0615</codigo>
+    <profesor>África Martín Martín</profesor>
+    <fechas>
+      <inicio>
+        <dia>15</dia>
+        <mes>09</mes>
+        <año>2025</año>
+      </inicio>
+      <fin>
+        <dia>22</dia>
+        <mes>06</mes>
+        <año>2026</año>
+      </fin>
+    </fechas>
+  </modulo>
+
+    <modulo>
+    <nombre>Lenguaje de Marcas y Sistemas de Gestión de Información</nombre>
+    <descripcion>Creación de documentos web y estructuras de datos mediante HTML, CSS, XML y JSON.</descripcion>
+    <codigo>0616</codigo>
+    <profesor>José Ignacio Prieto Tinoco</profesor>
+    <fechas>
+      <inicio>
+        <dia>15</dia>
+        <mes>09</mes>
+        <año>2025</año>
+      </inicio>
+      <fin>
+        <dia>22</dia>
+        <mes>06</mes>
+        <año>2026</año>
+      </fin>
+    </fechas>
+  </modulo>
+
+    <modulo>
+    <nombre>Programación</nombre>
+    <descripcion>Fundamentos de lógica de programación, algoritmos y desarrollo de aplicaciones utilizando lenguajes como Java o C#.</descripcion>
+    <codigo>0617</codigo>
+    <profesor>Antonia Fabián Romero</profesor>
+    <fechas>
+      <inicio>
+        <dia>15</dia>
+        <mes>09</mes>
+        <año>2025</año>
+      </inicio>
+      <fin>
+        <dia>22</dia>
+        <mes>06</mes>
+        <año>2026</año>
+      </fin>
+    </fechas>
+  </modulo>
+
+    <modulo>
+    <nombre>Sistemas Informáticos</nombre>
+    <descripcion>Instalación y configuración de sistemas operativos, hardware, redes locales y gestión de recursos del sistema.</descripcion>
+    <codigo>0618</codigo>
+    <profesor>Juan Miguel Quintero Hernández</profesor>
+    <fechas>
+      <inicio>
+        <dia>15</dia>
+        <mes>09</mes>
+        <año>2025</año>
+      </inicio>
+      <fin>
+        <dia>22</dia>
+        <mes>06</mes>
+        <año>2026</año>
+      </fin>
+    </fechas>
+  </modulo>
+
+    <modulo>
+    <nombre>Digitalización Aplicada a los Sectores Productivos GS</nombre>
+    <descripcion>Estudio de la transformación digital, tecnologías emergentes (IA, Big Data, IoT) y su impacto en los sectores productivos.</descripcion>
+    <codigo>0619</codigo>
+    <profesor>Juan Manuel Gallego Díaz</profesor>
+    <fechas>
+      <inicio>
+        <dia>15</dia>
+        <mes>09</mes>
+        <año>2025</año>
+      </inicio>
+      <fin>
+        <dia>22</dia>
+        <mes>06</mes>
+        <año>2026</año>
+      </fin>
+    </fechas>
+  </modulo>

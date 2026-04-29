@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pedidos SYSTEM "pedidos.dtd">
+<pedidos>
+    <pedido>
+        <empresa CIF="B12345678" sector="Tecnologia" actividad="Software_IT Consultoria_Sistemas">Tech Solutions S.L.</empresa>
+        <producto id_prod="P01">Servidor Dell R740</producto>
+        <producto id_prod="P02">Switch Cisco 24p</producto>
+        <fecha>2026-04-29</fecha>
+        <factura numfactura="F001" cliente="B12345678" productos="P01 P02">
+            <emisor>&MiEmpresa;</emisor>
+            <total>5400.50</total>
+            <fecha>2026-04-30</fecha>
+        </factura>
+    </pedido>
+
+    <pedido>
+        <cliente NIF="A44556677Z">Juan Pérez García</cliente>
+        <producto id_prod="P03">Portátil HP ProBook</producto>
+        <fecha>2026-04-28</fecha>
+        </pedido>
+</pedidos>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Soluciones XPath - Módulos IES</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #bbb; padding: 8px; text-align: left; }
+        th { background-color: #eee; }
+        code { color: #c7254e; background-color: #f9f2f4; padding: 2px 4px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h2>Consultas XPath para Módulos</h2>
+    <table>
+        <tr>
+            <th>Objetivo</th>
+            <th>Expresión XPath</th>
+        </tr>
+        <tr>
+            <td>Nombre de todos los módulos</td>
+            <td><code>//modulo/nombre/text()</code></td>
+        </tr>
+        <tr>
+            <td>Módulos de ASIR</td>
+            <td><code>//modulo[ciclo='ASIR']/nombre/text()</code></td>
+        </tr>
+        <tr>
+            <td>Módulos de 2º curso</td>
+            <td><code>//modulo[curso=2]/nombre/text()</code></td>
+        </tr>
+        <tr>
+            <td>Módulos con menos de 5h/semanales</td>
+            <td><code>//modulo[horasSemanales &lt; 5]/nombre/text()</code></td>
+        </tr>
+        <tr>
+            <td>Módulos de 1º de ASIR</td>
+            <td><code>//modulo[ciclo='ASIR' and curso=1]/nombre/text()</code></td>
+        </tr>
+        <tr>
+            <td>Horas de módulos con más de 3h</td>
+            <td><code>//modulo[horasSemanales &gt; 3]/horasSemanales/text()</code></td>
+        </tr>
+    </table>
+</body>
+</html>

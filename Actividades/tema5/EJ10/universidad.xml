@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+
+    <xsl:template match="/">
+        <html>
+            <head>
+                <title>Información Universitaria</title>
+                <style>
+                    body { font-family: sans-serif; margin: 30px; background-color: #f4f4f4; }
+                    h2 { color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
+                    table { border-collapse: collapse; width: 100%; background: white; margin-bottom: 30px; }
+                    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+                    th { background-color: #2c3e50; color: white; }
+                    tr:nth-child(even) { background-color: #f9f9f9; }
+                    ul { background: white; padding: 20px 40px; border: 1px solid #ddd; }
+                </style>
+            </head>
+            <body>
+
+                <h2>1. Lista de Carreras</h2>
+                <ul>
+                    <xsl:for-each select="universidad/carreras/carrera">
+                        <li><xsl:value-of select="nombre"/></li>
+                    </xsl:for-each>
+                </ul>
+
+                <h2>2. Lista de Asignaturas</h2>
+                <ul>
+                    <xsl:for-each select="universidad/asignaturas/asignatura">
+                        <li><xsl:value-of select="nombre"/></li>
+                    </xsl:for-each>
+                </ul>
+
+                <h2>3. Listado de Alumnos</h2>
+                <ul>
+                    <xsl:for-each select="universidad/alumnos/alumno">
+                        <li>
+                            <strong><xsl:value-of select="apellido1"/> <xsl:text> </xsl:text> <xsl:value-of select="apellido2"/></strong>, 
+                            <xsl:value-of select="nombre"/>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+
+                <h2>4. Detalle de Carreras</h2>
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Plan</th>
+                        <th>Créditos</th>
+                    </tr>
+                    <xsl:for-each select="universidad/carreras/carrera">
+                        <tr>
+                            <td><xsl:value-of select="nombre"/></td>
+                            <td><xsl:value-of select="plan"/></td>
+                            <td><xsl:value-of select="creditos"/></td>
+                        </tr>
+                    </xsl:for-each>
+                </table>
+
+                <h2>5. Créditos de Asignaturas</h2>
+                <table>
+                    <tr>
+                        <th>Asignatura</th>
+                        <th>Créditos Teóricos</th>
+                        <th>Créditos Prácticos</th>
+                    </tr>
+                    <xsl:for-each select="universidad/asignaturas/asignatura">
+                        <tr>
+                            <td><xsl:value-of select="nombre"/></td>
+                            <td><xsl:value-of select="creditos_teoricos"/></td>
+                            <td><xsl:value-of select="creditos_practicos"/></td>
+                        </tr>
+                    </xsl:for-each>
+                </table>
+
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>

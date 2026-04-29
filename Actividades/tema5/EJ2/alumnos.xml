@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lista_alumnos SYSTEM "alumnos.dtd">
+<lista_alumnos>
+    <alumno num_alumno="A01" sexo="hombre" altura_cm="180">
+        <nombre>Sergio</nombre>
+        <apellidos>García López</apellidos>
+        <domicilio>Calle Mayor 5, Madrid</domicilio>
+        <telefono origen="propio">600111222</telefono>
+        <telefono origen="padre">600333444</telefono>
+        <equipo>Baloncesto</equipo>
+        <aficion>Lectura</aficion>
+        <aficion>Ajedrez</aficion>
+        <provincia>Madrid</provincia>
+        <comentarios>Alumno muy participativo en <equipo>Baloncesto</equipo>.</comentarios>
+        <evaluacion>Primera</evaluacion>
+        <calificacion>8</calificacion>
+        <evaluacion>Segunda</evaluacion>
+        <calificacion>9</calificacion>
+    </alumno>
+
+    <alumno num_alumno="A02" sexo="mujer" ayudado_por="A01">
+        <nombre>Elena</nombre>
+        <apellidos>Martínez Ruiz</apellidos>
+        <domicilio>Av. Libertad 10, Lyon</domicilio>
+        <telefono origen="tutor">655777888</telefono>
+        <pais>Francia</pais>
+        <evaluacion>Primera</evaluacion>
+        <calificacion>7</calificacion>
+    </alumno>
+</lista_alumnos>

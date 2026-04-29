@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Soluciones XPath - IES Abastos</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        code { background-color: #eee; padding: 2px 4px; border-radius: 4px; color: #d11010; }
+    </style>
+</head>
+<body>
+
+    <h1>Soluciones Ejercicios XPath</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Objetivo</th>
+                <th>Expresión XPath</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nombre del Instituto</td>
+                <td><code>/ies/nombre</code></td>
+            </tr>
+            <tr>
+                <td>Página web del Instituto</td>
+                <td><code>/ies/web/text()</code></td>
+            </tr>
+            <tr>
+                <td>Nombre de los Ciclos Formativos</td>
+                <td><code>//ciclo/nombre/text()</code></td>
+            </tr>
+            <tr>
+                <td>Siglas de los Ciclos (Atributo id)</td>
+                <td><code>//ciclo/@id</code></td>
+            </tr>
+            <tr>
+                <td>Años de los decretos</td>
+                <td><code>//decretoTitulo/@año</code></td>
+            </tr>
+            <tr>
+                <td>Ciclo completo de Grado Medio</td>
+                <td><code>//ciclo[grado='Medio']</code></td>
+            </tr>
+            <tr>
+                <td>Nombre de los Ciclos de Grado Superior</td>
+                <td><code>//ciclo[grado='Superior']/nombre</code></td>
+            </tr>
+            <tr>
+                <td>Nombre de ciclos anteriores a 2010</td>
+                <td><code>//ciclo[decretoTitulo/@año &lt; 2010]/nombre/text()</code></td>
+            </tr>
+            <tr>
+                <td>Nombre de ciclos de 2008 o 2010</td>
+                <td><code>//ciclo[decretoTitulo/@año=2008 or decretoTitulo/@año=2010]/nombre/text()</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

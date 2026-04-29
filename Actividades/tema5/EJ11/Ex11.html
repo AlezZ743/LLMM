@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector RSS - Últimas Noticias</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; }
+        #news-container { display: grid; gap: 20px; }
+        .news-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-5px); }
+        .news-card h2 { margin-top: 0; font-size: 1.25rem; color: #1a73e8; }
+        .news-card p { color: #555; line-height: 1.5; }
+        .news-card a { text-decoration: none; color: #d93025; font-weight: bold; font-size: 0.9rem; }
+        .date { color: #888; font-size: 0.8rem; margin-bottom: 10px; }
+        .loading { text-align: center; font-style: italic; color: #666; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>📰 Últimas Noticias (RSS)</h1>
+            <p>Datos obtenidos mediante AJAX de El País</p>
+        </header>
+
+        <div id="news-container">
+            <p class="loading">Cargando noticias...</p>
+        </div>
+    </div>
+
+    <script>
+        // Usamos un proxy de CORS para evitar el bloqueo del navegador al pedir datos a otro dominio
+        const PROXY_URL = "https://api.allorigins.win/get?url=";
+        const RSS_URL = encodeURIComponent("https://elpais.com/rss/elpais/portada.xml");
+
+        async function loadRSS() {
+            const container = document.getElementById('news-container');
+            
+            try {
+                const response = await fetch(PROXY_URL + RSS_URL);
+                const data = await response.json();
+                
+                // Parseamos la cadena XML que nos devuelve el proxy
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data.contents, "text/xml");
+                
+                const items = xmlDoc.querySelectorAll("item");
+                container.innerHTML = ""; // Limpiar el cargando
+
+                items.forEach(item => {
+                    const title = item.querySelector("title").textContent;
+                    const link = item.querySelector("link").textContent;
+                    const description = item.querySelector("description").textContent;
+                    const pubDate = new Date(item.querySelector("pubDate").textContent).toLocaleString();
+
+                    const card = document.createElement('div');
+                    card.className = 'news-card';
+                    card.innerHTML = `
+                        <div class="date">${pubDate}</div>
+                        <h2>${title}</h2>
+                        <p>${description.substring(0, 150)}...</p>
+                        <a href="${link}" target="_blank">LEER MÁS →</a>
+                    `;
+                    container.appendChild(card);
+                });
+
+            } catch (error) {
+                container.innerHTML = "<p>Error al cargar el feed. Por favor, inténtalo más tarde.</p>";
+                console.error("Error fetching RSS:", error);
+            }
+        }
+
+        // Ejecutar al cargar la página
+        loadRSS();
+    </script>
+</body>
+</html>

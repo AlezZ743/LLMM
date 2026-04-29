@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="dia" type="xs:string"/>
+  <xs:element name="mes" type="xs:string"/>
+  <xs:element name="anio" type="xs:string"/>
+
+  <xs:complexType name="tipoFecha">
+    <xs:sequence>
+      <xs:element ref="dia"/>
+      <xs:element ref="mes"/>
+      <xs:element ref="anio"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tipoModulo">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="descripcion" type="xs:string"/>
+      <xs:element name="codigo" type="xs:string"/>
+      <xs:element name="profesor" type="xs:string"/>
+      <xs:element name="fechas">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="inicio" type="tipoFecha"/>
+            <xs:element name="fin" type="tipoFecha"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="modulos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="modulo" type="tipoModulo" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
