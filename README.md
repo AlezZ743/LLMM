@@ -121,5 +121,12 @@ Este repositorio incluye actividades llevadas a cabo en el módulo Lenguaje de M
 | [AJAX] |  |
 | [EJERCICIO 1](Actividades/tema4/EJ12/Ex1.html) | Página con información sobre CDs |
 | [EJERCICIO 2](Actividades/tema4/EJ12/Ex2.html) | Página con información meteorológica |
+| [EJERCICIO 3](Actividades/tema4/EJ13/Ex3.html) | Página con tabla de artistas |
+| [JSON] |  |
+| [EJERCICIO 1](Actividades/tema4/EJ14/Ex14.html) | Datos del objeto |
+| [EJERCICIO 2](Actividades/tema4/EJ15/Ex15.html) | Datos del objeto más coches |
+| [EJERCICIO 3](Actividades/tema4/EJ16/ex16.html) | Array más tabla |
+| [EJERCICIO 4](Actividades/tema4/EJ17/Ex17.html) | Ejercicio con array + json |
+| [EJERCICIO 5](Actividades/tema4/EJ18/Ex18.html) | API de NASA |
 
 
